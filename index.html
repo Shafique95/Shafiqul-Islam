@@ -469,6 +469,123 @@
             100% { background-position: 0% 50%; }
         }
         
+        /* ===== MOBILE RESPONSIVE ENHANCEMENTS v3.0 ===== */
+        
+        /* Mobile-First Container Improvements */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Enhanced Mobile Typography */
+            h1, h2, h3, h4, h5, h6 {
+                line-height: 1.2;
+                word-wrap: break-word;
+            }
+            
+            /* Mobile Image Optimizations with Padding */
+            img {
+                max-width: 100%;
+                height: auto;
+                padding-top: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Profile Image Mobile Enhancement */
+            .profile-image {
+                padding-top: 1rem !important;
+                margin-bottom: 1rem;
+            }
+            
+            /* Mobile Card Spacing */
+            .skill-card, .project-card, .card {
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+            
+            /* Mobile Text Sizing */
+            .mobile-text-adjust {
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+            
+            /* Mobile Button Improvements */
+            button, .btn {
+                min-height: 44px;
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+            
+            /* Mobile Navigation Fixes */
+            nav {
+                padding: 0.75rem 1rem;
+            }
+            
+            /* Mobile Spacing Utilities */
+            .mobile-px-4 { padding-left: 1rem; padding-right: 1rem; }
+            .mobile-py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+            .mobile-mt-4 { margin-top: 1rem; }
+            .mobile-mb-4 { margin-bottom: 1rem; }
+        }
+        
+        /* Tablet Optimizations */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            img {
+                padding-top: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .tablet-spacing {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Large Screen Optimizations */
+        @media (min-width: 1025px) {
+            img {
+                padding-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Touch-Friendly Interactive Elements */
+        @media (hover: none) and (pointer: coarse) {
+            a, button, .clickable {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .hover\:shadow-xl:hover {
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+        
+        /* Improved Mobile Gallery Grid */
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-item img {
+                padding-top: 0.5rem;
+                border-radius: 0.75rem;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+            }
+        }
+        
+        /* Mobile Video Responsiveness */
+        @media (max-width: 640px) {
+            video {
+                width: 100%;
+                height: auto;
+                max-height: 250px;
+                padding-top: 0.5rem;
+            }
+        }
+        
         .glass-effect {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -534,47 +651,47 @@
     <!-- Skip to content for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-primary text-white p-2 z-[10000]">Skip to main content</a>
     
-    <!-- Navigation -->
+    <!-- Enhanced Mobile-First Navigation -->
     <nav class="fixed top-0 w-full z-[9999] glass-effect border-b border-white/20" data-aos="fade-down" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
             <div class="flex items-center justify-between">
                 <div class="flex flex-col" itemprop="name">
                     <h1 class="sr-only">Shafiqul Islam - Expert Full Stack Developer Portfolio</h1>
-                    <div class="text-2xl font-display font-bold gradient-text">Shafiqul Islam</div>
-                    <div class="text-sm text-gray-600 font-medium">Expert Full Stack Developer</div>
+                    <div class="text-lg sm:text-xl md:text-2xl font-display font-bold gradient-text">Shafiqul Islam</div>
+                    <div class="text-xs sm:text-sm text-gray-600 font-medium">Expert Full Stack Developer</div>
                 </div>
                 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">About</a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
-                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
-                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
-                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Gallery</a>
-                    <a href="#videos" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Videos</a>
-                    <a href="#recommendations" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Reviews</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                <!-- Desktop Navigation - Better Responsive Breakpoints -->
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Experience</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Education</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Portfolio</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Gallery</a>
+                    <a href="#videos" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Videos</a>
+                    <a href="#recommendations" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Reviews</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300 text-sm xl:text-base">Contact</a>
                 </div>
                 
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-700 hover:text-primary" id="mobile-menu-button">
-                    <i class="fas fa-bars text-xl"></i>
+                <!-- Enhanced Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 hover:text-primary p-2 rounded-lg hover:bg-gray-100 transition-all duration-300" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-lg sm:text-xl"></i>
                 </button>
             </div>
             
-            <!-- Mobile Navigation -->
-            <div class="hidden md:hidden mt-4 pb-4 border-t border-white/20" id="mobile-menu">
+            <!-- Enhanced Mobile Navigation -->
+            <div class="hidden lg:hidden mt-4 pb-4 border-t border-white/20" id="mobile-menu">
                 <div class="flex flex-col space-y-3 pt-4">
-                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
-                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
-                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
-                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
-                    <a href="#portfolio" class="text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
-                    <a href="#gallery" class="text-gray-700 hover:text-primary transition-colors duration-300">Gallery</a>
-                    <a href="#videos" class="text-gray-700 hover:text-primary transition-colors duration-300">Videos</a>
-                    <a href="#recommendations" class="text-gray-700 hover:text-primary transition-colors duration-300">Reviews</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Education</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Portfolio</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Gallery</a>
+                    <a href="#videos" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Videos</a>
+                    <a href="#recommendations" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gray-50">Contact</a>
                 </div>
             </div>
         </div>
@@ -589,33 +706,33 @@
             <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" style="animation-delay: -3s;"></div>
             <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-500/20 rounded-full blur-xl animate-float" style="animation-delay: -1.5s;"></div>
             
-            <div class="container mx-auto px-6 relative z-30 pt-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30 pt-16 sm:pt-20 lg:pt-24">
                 <div class="text-center">
-                    <!-- Profile Image -->
-                    <div class="mb-8" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Profile Image - Enhanced Mobile Responsiveness -->
+                    <div class="mb-6 sm:mb-8 lg:mb-10" data-aos="zoom-in" data-aos-delay="200">
                         <div class="relative inline-block">
                             <img src="images/avatar.jpg" alt="Shafiqul Islam - Expert Full Stack Developer specializing in Java Spring Boot Angular React Android Flutter development" 
-                                 class="w-48 h-48 rounded-full object-cover border-4 border-white shadow-2xl mx-auto animate-glow"
+                                 class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 rounded-full object-cover border-4 border-white shadow-2xl mx-auto animate-glow pt-4 sm:pt-6 md:pt-8"
                                  itemprop="image"
                                  width="192"
                                  height="192"
                                  loading="eager">
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20"></div>
+                            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20 mt-4 sm:mt-6 md:mt-8"></div>
                         </div>
                     </div>
                     
-                    <!-- Main Heading - Enhanced for Maximum Prominence -->
-                    <div class="text-center mb-8" data-aos="fade-up" data-aos-delay="200">
-                        <div class="text-lg md:text-xl text-gray-600 mb-3 font-medium">Hello, I'm</div>
-                        <h1 id="hero-heading" class="text-6xl md:text-8xl lg:text-9xl font-display font-black mb-4 leading-tight" data-aos="zoom-in" data-aos-delay="400" itemprop="name">
+                    <!-- Main Heading - Enhanced Mobile Responsiveness -->
+                    <div class="text-center mb-6 sm:mb-8 lg:mb-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-2 sm:mb-3 font-medium">Hello, I'm</div>
+                        <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-display font-black mb-3 sm:mb-4 leading-tight" data-aos="zoom-in" data-aos-delay="400" itemprop="name">
                             <span class="gradient-text drop-shadow-2xl animate-glow">SHAFIQUL ISLAM</span>
                         </h1>
-                        <!-- SEO OPTIMIZED - Enhanced Search Visibility v2.7 -->
-                        <div class="text-xs text-gray-400 mb-2">v2.7 - SEO OPTIMIZED - Aug 2, 2025</div>
-                        <div class="text-xl md:text-2xl text-gray-700 mb-4 font-medium" data-aos="fade-up" data-aos-delay="500">
+                        <!-- SEO OPTIMIZED - Enhanced Search Visibility v3.0 Mobile Responsive -->
+                        <div class="text-xs text-gray-400 mb-2">v3.0 - MOBILE RESPONSIVE - Aug 2, 2025</div>
+                        <div class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-3 sm:mb-4 font-medium px-4" data-aos="fade-up" data-aos-delay="500">
                             Passionate Full Stack Developer & Creative Problem Solver
                         </div>
-                        <div class="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-6 rounded-full" data-aos="scale-x" data-aos-delay="600"></div>
+                        <div class="w-24 sm:w-32 md:w-40 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-4 sm:mb-6 rounded-full" data-aos="scale-x" data-aos-delay="600"></div>
                     </div>
                     
                     <!-- Job Title -->
@@ -683,41 +800,41 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white scroll-mt-20" aria-labelledby="about-heading" itemscope itemtype="https://schema.org/AboutPage">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 id="about-heading" class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up" itemprop="name">
+    <!-- Enhanced Mobile-Responsive About Section -->
+    <section id="about" class="py-12 sm:py-16 lg:py-20 bg-white scroll-mt-20" aria-labelledby="about-heading" itemscope itemtype="https://schema.org/AboutPage">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 id="about-heading" class="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up" itemprop="name">
                     About Me - Expert Full Stack Developer
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- About Content -->
-                <article class="space-y-6" data-aos="fade-right" itemprop="description">
-                    <h3 class="text-2xl font-display font-semibold text-gray-800 mb-4">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- About Content - Enhanced Mobile -->
+                <article class="space-y-4 sm:space-y-6" data-aos="fade-right" itemprop="description">
+                    <h3 class="text-xl sm:text-2xl font-display font-semibold text-gray-800 mb-3 sm:mb-4">
                         Expert Full Stack Developer & Creative Problem Solver
                     </h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
+                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
                         Hello! I'm <span class="text-primary font-semibold" itemprop="author">Shafiqul Islam</span>, a passionate <strong>Expert Full Stack Developer</strong> with <strong>5+ years of professional experience</strong> in modern web technologies. I specialize in creating robust, scalable applications using <em>Java Spring Boot, Angular, React, Android, and Flutter</em>.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
+                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
                         With a strong foundation in both <strong>front-end and back-end development</strong>, I bring ideas to life through clean, efficient code and intuitive user experiences. I'm a quick learner, team player, and always excited to take on new challenges in <em>software architecture, microservices, and cloud computing</em>.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
+                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
                         Beyond coding, I have expertise in <strong>UI/UX design</strong> with tools like Adobe Photoshop, Illustrator, and Adobe XD, allowing me to contribute to the complete product development lifecycle from <em>concept to deployment</em>.
                     </p>
                     
-                    <!-- Key Stats -->
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
-                            <div class="text-3xl font-bold text-primary mb-2">3+</div>
-                            <div class="text-gray-600">Years Experience</div>
+                    <!-- Key Stats - Enhanced Mobile Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
+                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">3+</div>
+                            <div class="text-sm sm:text-base text-gray-600">Years Experience</div>
                         </div>
-                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl">
-                            <div class="text-3xl font-bold text-secondary mb-2">15+</div>
-                            <div class="text-gray-600">Projects Completed</div>
+                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl">
+                            <div class="text-2xl sm:text-3xl font-bold text-secondary mb-1 sm:mb-2">15+</div>
+                            <div class="text-sm sm:text-base text-gray-600">Projects Completed</div>
                         </div>
                     </div>
                 </div>
@@ -777,31 +894,31 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+    <!-- Enhanced Mobile-Responsive Skills Section -->
+    <section id="skills" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
                     Skills & Expertise
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
-                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-base sm:text-lg text-gray-600 mt-4 sm:mt-6 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="400">
                     Proficient in modern technologies and frameworks for building scalable applications
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Programming Languages -->
-                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-code text-white text-2xl"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Programming Languages - Enhanced Mobile -->
+                <div class="skill-card bg-white p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-code text-white text-lg sm:text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800">Languages</h3>
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800">Languages</h3>
                     </div>
-                    <div class="space-y-3">
+                    <div class="space-y-2 sm:space-y-3">
                         <div class="flex items-center justify-between">
-                            <span class="text-gray-700">Java</span>
+                            <span class="text-sm sm:text-base text-gray-700">Java</span>
                             <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
                         </div>
                         <div class="flex items-center justify-between">
@@ -1018,33 +1135,35 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+    <!-- Enhanced Mobile-Responsive Portfolio Section -->
+    <section id="portfolio" class="py-12 sm:py-16 lg:py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
                     Featured Projects
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
-                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-base sm:text-lg text-gray-600 mt-4 sm:mt-6 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="400">
                     A showcase of my recent work across web and mobile applications
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project 1 - Enhanced Mobile -->
                 <div class="project-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-500 relative overflow-hidden">
-                        <img src="images/project-1.jpg" alt="Blood Donation Android App" class="w-full h-full object-cover opacity-90">
+                    <div class="h-40 sm:h-48 bg-gradient-to-br from-blue-500 to-purple-500 relative overflow-hidden">
+                        <img src="images/project-1.jpg" alt="Blood Donation Android App by SHAFIQUL ISLAM" 
+                             class="w-full h-full object-cover opacity-90 pt-2 sm:pt-3" 
+                             loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
+                        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
                             <span class="px-2 py-1 bg-white/20 rounded-full text-xs font-semibold">Android</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Blood Donation App</h3>
-                        <p class="text-gray-600 mb-4">Native Android application for blood bank management with Firebase integration.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2">Blood Donation App</h3>
+                        <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">Native Android application for blood bank management with Firebase integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
                             <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Java</span>
                             <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Firebase</span>
                             <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">SQLite</span>
@@ -1110,37 +1229,43 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
-    <section id="gallery" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+    <!-- Enhanced Mobile-Responsive Photo Gallery Section -->
+    <section id="gallery" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
                     Photo Gallery
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
-                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-base sm:text-lg text-gray-600 mt-4 sm:mt-6 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="400">
                     Capturing moments from my professional journey and achievements
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Photo 1 -->
+            <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <!-- Photo 1 - Enhanced Mobile -->
                 <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
-                     data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('activity/activity1.jpeg', 'Professional Activity', 'Training & Development Session')">
-                    <img src="activity/activity1.jpeg" alt="Professional Activity 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                     data-aos="fade-up" data-aos-delay="200" 
+                     onclick="openLightbox('activity/activity1.jpeg', 'Professional Activity', 'Training & Development Session')"
+                     role="button" tabindex="0" 
+                     onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('activity/activity1.jpeg', 'Professional Activity', 'Training & Development Session')">
+                    <img src="activity/activity1.jpeg" 
+                         alt="SHAFIQUL ISLAM Professional Activity - Training & Development Session" 
+                         class="gallery-item w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500 pt-2 sm:pt-3" 
+                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-lg sm:text-xl"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <h3 class="text-lg font-semibold">Professional Activity</h3>
-                        <p class="text-sm text-gray-200">Training & Development</p>
+                    <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-sm sm:text-lg font-semibold">Professional Activity</h3>
+                        <p class="text-xs sm:text-sm text-gray-200">Training & Development</p>
                     </div>
                 </div>
 
-                <!-- Photo 2 -->
+                <!-- Photo 2 - Enhanced Mobile -->
                 <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
                      data-aos="fade-up" data-aos-delay="300" onclick="openLightbox('activity/activity2.jpeg', 'Team Collaboration', 'Project Development Workshop')">
                     <img src="activity/activity2.jpeg" alt="Professional Activity 2" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
@@ -1259,9 +1384,9 @@
                     </div>
                     
                     <div class="relative group">
-                        <!-- Video Element -->
+                        <!-- Enhanced Mobile-Responsive Video Element -->
                         <video id="demoVideo" 
-                               class="w-full h-auto max-h-[500px] object-cover rounded-t-3xl" 
+                               class="w-full h-auto max-h-[300px] sm:max-h-[400px] lg:max-h-[500px] object-cover rounded-t-3xl pt-3 sm:pt-4" 
                                poster="images/project-2.PNG" 
                                controls
                                preload="metadata"
@@ -1272,21 +1397,21 @@
                             <p>Your browser doesn't support HTML5 video. You can <a href="1264992-Ecommerce-Project.mp4">download the video</a> instead.</p>
                         </video>
                         
-                        <!-- Video Info with Enhanced Schema -->
-                        <div class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
-                            <div class="flex items-start justify-between">
+                        <!-- Video Info with Enhanced Schema and Mobile Responsiveness -->
+                        <div class="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+                            <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                                 <div class="flex-1">
-                                    <h3 class="text-2xl font-bold mb-2" itemprop="name">E-Commerce Platform Demo by SHAFIQUL ISLAM</h3>
-                                    <p class="text-gray-300 mb-4 leading-relaxed" itemprop="description">
+                                    <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mb-2" itemprop="name">E-Commerce Platform Demo by SHAFIQUL ISLAM</h3>
+                                    <p class="text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base" itemprop="description">
                                         Complete walkthrough of SHAFIQUL ISLAM's Spring Boot e-commerce application featuring user authentication, 
                                         product management, shopping cart functionality, and secure payment integration. Professional portfolio demo.
                                     </p>
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-semibold">Spring Boot</span>
-                                        <span class="px-3 py-1 bg-green-600 text-white rounded-full text-sm font-semibold">Thymeleaf</span>
-                                        <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm font-semibold">MySQL</span>
-                                        <span class="px-3 py-1 bg-orange-600 text-white rounded-full text-sm font-semibold">Bootstrap</span>
-                                        <span class="px-3 py-1 bg-red-600 text-white rounded-full text-sm font-semibold">SHAFIQUL ISLAM</span>
+                                    <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                                        <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold">Spring Boot</span>
+                                        <span class="px-3 py-1 bg-green-600 text-white rounded-full text-xs sm:text-sm font-semibold">Thymeleaf</span>
+                                        <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-xs sm:text-sm font-semibold">MySQL</span>
+                                        <span class="px-3 py-1 bg-orange-600 text-white rounded-full text-xs sm:text-sm font-semibold">Bootstrap</span>
+                                        <span class="px-3 py-1 bg-red-600 text-white rounded-full text-xs sm:text-sm font-semibold">SHAFIQUL ISLAM</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-4 ml-6">
