@@ -815,27 +815,27 @@
                         <br><strong>💼 Available for Hire - Remote & On-site Projects</strong>
                     </p>
                 
-                <!-- Social Links with Icon Fallbacks -->
+                <!-- Social Links with Reliable Icons -->
                 <div class="flex justify-center space-x-6 mb-12" data-aos="fade-up" data-aos-delay="800">
                     <a href="https://github.com/shafique95" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-github text-gray-700 group-hover:text-primary" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'; this.className='text-gray-700 group-hover:text-primary'"></i>
+                        <span class="icon-fallback text-gray-700 group-hover:text-primary text-xl" data-icon="github">🐙</span>
                     </a>
                     <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-linkedin-in text-gray-700 group-hover:text-blue-600" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'; this.className='text-gray-700 group-hover:text-blue-600'"></i>
+                        <span class="icon-fallback text-gray-700 group-hover:text-blue-600 text-xl" data-icon="linkedin">💼</span>
                     </a>
                     <a href="https://twitter.com/shafique0193477" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-twitter text-gray-700 group-hover:text-blue-400" onload="this.style.display='inline'" onerror="this.innerHTML='🐦'; this.className='text-gray-700 group-hover:text-blue-400'"></i>
+                        <span class="icon-fallback text-gray-700 group-hover:text-blue-400 text-xl" data-icon="twitter">🐦</span>
                     </a>
                     <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-facebook-f text-gray-700 group-hover:text-blue-600" onload="this.style.display='inline'" onerror="this.innerHTML='📘'; this.className='text-gray-700 group-hover:text-blue-600'"></i>
+                        <span class="icon-fallback text-gray-700 group-hover:text-blue-600 text-xl" data-icon="facebook">📘</span>
                     </a>
                     <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-instagram text-gray-700 group-hover:text-pink-600" onload="this.style.display='inline'" onerror="this.innerHTML='📷'; this.className='text-gray-700 group-hover:text-pink-600'"></i>
+                        <span class="icon-fallback text-gray-700 group-hover:text-pink-600 text-xl" data-icon="instagram">📷</span>
                     </a>
                 </div>
                 
@@ -843,12 +843,12 @@
                 <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1000">
                     <a href="material-resume.pdf" target="_blank" 
                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center group">
-                        <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+                        <span class="icon-fallback mr-2 group-hover:animate-bounce" data-icon="download">⬇️</span>
                         Download Resume
                     </a>
                     <a href="#contact" 
                        class="px-8 py-4 bg-white text-gray-700 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 hover:border-primary flex items-center justify-center group">
-                        <i class="fas fa-envelope mr-2 group-hover:text-primary"></i>
+                        <span class="icon-fallback mr-2 group-hover:text-primary" data-icon="envelope">📧</span>
                         Get In Touch
                     </a>
                 </div>
@@ -873,9 +873,9 @@
                 <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="grid lg:grid-cols-3 gap-8 lg:gap-6 items-start">
                 <!-- About Content - Enhanced Mobile -->
-                <article class="space-y-4 sm:space-y-6" data-aos="fade-right" itemprop="description">
+                <div class="lg:col-span-1 space-y-4 sm:space-y-6" data-aos="fade-right" itemprop="description">
                     <h3 class="text-xl sm:text-2xl font-display font-semibold text-gray-800 mb-3 sm:mb-4">
                         Expert Full Stack Developer & Creative Problem Solver
                     </h3>
@@ -888,29 +888,32 @@
                     <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
                         Beyond coding, I have expertise in <strong>UI/UX design</strong> with tools like Adobe Photoshop, Illustrator, and Adobe XD, allowing me to contribute to the complete product development lifecycle from <em>concept to deployment</em>.
                     </p>
-                    
-                    <!-- Key Stats - Enhanced Mobile Grid -->
-                    <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-8">
-                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
-                            <div class="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">3+</div>
-                            <div class="text-sm sm:text-base text-gray-600">Years Experience</div>
+                </div>
+                
+                <!-- Key Stats - Enhanced Mobile Grid -->
+                <div class="lg:col-span-1 space-y-6" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Statistics</h3>
+                    <div class="grid grid-cols-1 gap-4 sm:gap-6">
+                        <div class="text-center p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg border border-blue-100">
+                            <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">5+</div>
+                            <div class="text-sm sm:text-base text-gray-600 font-semibold">Years Experience</div>
                         </div>
-                        <div class="text-center p-3 sm:p-4 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl">
-                            <div class="text-2xl sm:text-3xl font-bold text-secondary mb-1 sm:mb-2">15+</div>
-                            <div class="text-sm sm:text-base text-gray-600">Projects Completed</div>
+                        <div class="text-center p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl shadow-lg border border-purple-100">
+                            <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">15+</div>
+                            <div class="text-sm sm:text-base text-gray-600 font-semibold">Projects Completed</div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Bio Information - Compact & Beautiful Design -->
-                <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
+                <div class="lg:col-span-1 space-y-6" data-aos="fade-left" data-aos-delay="400">
                     <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
                         <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Personal Info</h3>
                         
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                        <div class="grid grid-cols-1 gap-3">
                             <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-blue-50 transition-colors">
                                 <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                    <i class="far fa-calendar-alt text-white text-sm"></i>
+                                    <span class="icon-fallback text-white text-sm" data-icon="calendar">📅</span>
                                 </div>
                                 <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Birth Date</div>
                                 <div class="font-semibold text-gray-800 text-sm">August 2, 1995</div>
@@ -918,7 +921,7 @@
                             
                             <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-purple-50 transition-colors">
                                 <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mb-2">
-                                    <i class="far fa-envelope text-white text-sm"></i>
+                                    <span class="icon-fallback text-white text-sm" data-icon="email">📧</span>
                                 </div>
                                 <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Email</div>
                                 <div class="font-semibold text-gray-800 text-xs truncate max-w-full">www.shafiquebd@gmail.com</div>
@@ -926,7 +929,7 @@
                             
                             <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-green-50 transition-colors">
                                 <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mb-2">
-                                    <i class="fas fa-phone text-white text-sm"></i>
+                                    <span class="icon-fallback text-white text-sm" data-icon="phone">📞</span>
                                 </div>
                                 <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Phone</div>
                                 <div class="font-semibold text-gray-800 text-sm">+8801934776188</div>
@@ -934,7 +937,7 @@
                             
                             <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-red-50 transition-colors">
                                 <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mb-2">
-                                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                                    <span class="icon-fallback text-white text-sm" data-icon="location">📍</span>
                                 </div>
                                 <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</div>
                                 <div class="font-semibold text-gray-800 text-xs leading-tight">
@@ -1771,27 +1774,27 @@
                 <div class="text-2xl font-display font-bold gradient-text mb-4">Shafiqul Islam</div>
                 <p class="text-gray-400 mb-8">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
                 
-                <!-- Social Links with Icon Fallbacks -->
+                <!-- Social Links with Reliable Icons -->
                 <div class="flex justify-center space-x-6 mb-8">
                     <a href="https://github.com/shafique95" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
-                        <i class="fab fa-github" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'"></i>
+                        <span class="icon-fallback text-white" data-icon="github">🐙</span>
                     </a>
                     <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                        <i class="fab fa-linkedin-in" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'"></i>
+                        <span class="icon-fallback text-white" data-icon="linkedin">💼</span>
                     </a>
                     <a href="https://twitter.com/shafique0193477" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-300">
-                        <i class="fab fa-twitter" onload="this.style.display='inline'" onerror="this.innerHTML='🐦'"></i>
+                        <span class="icon-fallback text-white" data-icon="twitter">🐦</span>
                     </a>
                     <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                        <i class="fab fa-facebook-f" onload="this.style.display='inline'" onerror="this.innerHTML='📘'"></i>
+                        <span class="icon-fallback text-white" data-icon="facebook">📘</span>
                     </a>
                     <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
-                        <i class="fab fa-instagram" onload="this.style.display='inline'" onerror="this.innerHTML='📷'"></i>
+                        <span class="icon-fallback text-white" data-icon="instagram">📷</span>
                     </a>
                 </div>
                 
