@@ -157,4 +157,40 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- SHAFIQUL ISLAM Images Gallery Page for Google Images SEO -->
+    <url>
+        <loc>https://www.qultec.com/images-gallery.html</loc>
+        <lastmod>2025-08-02T18:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        
+        <!-- Enhanced Image Collection for Google Images -->
+        <image:image>
+            <image:loc>https://www.qultec.com/images/avatar.jpg</image:loc>
+            <image:title>SHAFIQUL ISLAM - Expert Full Stack Developer Professional Portrait Bangladesh</image:title>
+            <image:caption>Official professional portrait of SHAFIQUL ISLAM, Expert Full Stack Developer from Bangladesh specializing in Java Spring Boot, Angular, React, Android and Flutter development. Available for hire globally.</image:caption>
+            <image:geo_location>Bangladesh</image:geo_location>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/images/home page.png</image:loc>
+            <image:title>SHAFIQUL ISLAM Portfolio Website Homepage - Full Stack Developer Bangladesh</image:title>
+            <image:caption>Homepage screenshot of SHAFIQUL ISLAM's professional portfolio website showcasing full stack development services from Bangladesh</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/activity1.jpeg</image:loc>
+            <image:title>SHAFIQUL ISLAM Professional Training Workshop Bangladesh</image:title>
+            <image:caption>SHAFIQUL ISLAM participating in professional development training session in Bangladesh</image:caption>
+            <image:geo_location>Bangladesh</image:geo_location>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/activity2.jpeg</image:loc>
+            <image:title>SHAFIQUL ISLAM Team Development Session Bangladesh</image:title>
+            <image:caption>SHAFIQUL ISLAM in team collaboration and project development workshop in Bangladesh</image:caption>
+            <image:geo_location>Bangladesh</image:geo_location>
+        </image:image>
+    </url>
 </urlset>
