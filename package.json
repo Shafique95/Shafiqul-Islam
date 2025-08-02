@@ -1,0 +1,17 @@
+{
+  "name": "favicon-generator",
+  "version": "1.0.0",
+  "description": "Generate custom favicon for SHAFIQUL ISLAM portfolio",
+  "main": "generate-favicon.js",
+  "scripts": {
+    "generate": "node generate-favicon.js"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {},
+  "keywords": ["favicon", "icon", "shafiqul", "islam", "portfolio"],
+  "author": "SHAFIQUL ISLAM",
+  "license": "MIT"
+}

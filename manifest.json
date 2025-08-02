@@ -1,0 +1,69 @@
+{
+  "name": "SHAFIQUL ISLAM - Expert Full Stack Developer Portfolio",
+  "short_name": "SI Portfolio",
+  "description": "Professional portfolio of SHAFIQUL ISLAM, Expert Full Stack Developer specializing in Java Spring Boot, Angular, React, Android & Flutter development from Bangladesh",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "categories": ["business", "portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "apple-touch-icon"
+    },
+    {
+      "src": "favicon-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About SHAFIQUL ISLAM",
+      "url": "/#about",
+      "description": "Learn about Shafiqul Islam's background and expertise"
+    },
+    {
+      "name": "Portfolio Projects",
+      "url": "/#portfolio",
+      "description": "View Shafiqul Islam's development projects"
+    },
+    {
+      "name": "Contact Info",
+      "url": "/#contact",
+      "description": "Get in touch with Shafiqul Islam"
+    }
+  ],
+  "developer": {
+    "name": "SHAFIQUL ISLAM",
+    "url": "https://www.qultec.com/"
+  }
+}

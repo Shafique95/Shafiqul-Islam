@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head><title>Favicon 150x150</title></head>
+<body>
+    <canvas id="canvas" width="150" height="150"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Calculate sizes based on canvas size
+        const fontSize = Math.floor(150 * 0.6);
+        const radius = 15;
+        
+        // Background gradient
+        const gradient = ctx.createLinearGradient(0, 0, 150, 150);
+        gradient.addColorStop(0, '#3B82F6');
+        gradient.addColorStop(1, '#1E40AF');
+        
+        // Draw background with rounded corners for larger sizes
+        if (150 >= 150) {
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, 150, 150, radius);
+            ctx.fill();
+        } else {
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 150, 150);
+            
+            ctx.strokeStyle = '#1E3A8A';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(0, 0, 150, 150);
+        }
+        
+        // Draw "SI" text
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold ' + fontSize + 'px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('SI', 150/2, 150/2);
+        
+        // Add accent dot for larger sizes
+        if (150 >= 32) {
+            const dotSize = Math.max(2, Math.floor(150 * 0.06));
+            const dotX = 150 - dotSize * 2 - 4;
+            const dotY = dotSize + 4;
+            
+            ctx.fillStyle = '#10B981';
+            ctx.beginPath();
+            ctx.arc(dotX, dotY, dotSize, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+        
+        // Auto download
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.download = 'favicon-150x150.png';
+            link.href = canvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            console.log('Generated favicon-150x150.png');
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Creator for SHAFIQUL ISLAM</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        .favicon-preview {
+            text-align: center;
+            margin: 20px 0;
+        }
+        canvas {
+            border: 2px solid #333;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .download-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .preview-sizes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .size-preview {
+            text-align: center;
+        }
+        .instructions {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>🎨 Custom Favicon Creator for SHAFIQUL ISLAM</h1>
+        <p>Creating a professional favicon with "SI" initials representing your name and developer identity.</p>
+        
+        <div class="favicon-preview">
+            <h2>Favicon Designs:</h2>
+            <div class="preview-sizes">
+                <div class="size-preview">
+                    <h3>Design 1: Modern SI</h3>
+                    <canvas id="favicon1-16" width="16" height="16"></canvas>
+                    <canvas id="favicon1-32" width="32" height="32"></canvas>
+                    <canvas id="favicon1-64" width="64" height="64"></canvas>
+                    <p>16x16, 32x32, 64x64</p>
+                </div>
+                <div class="size-preview">
+                    <h3>Design 2: Code SI</h3>
+                    <canvas id="favicon2-16" width="16" height="16"></canvas>
+                    <canvas id="favicon2-32" width="32" height="32"></canvas>
+                    <canvas id="favicon2-64" width="64" height="64"></canvas>
+                    <p>16x16, 32x32, 64x64</p>
+                </div>
+                <div class="size-preview">
+                    <h3>Design 3: Professional SI</h3>
+                    <canvas id="favicon3-16" width="16" height="16"></canvas>
+                    <canvas id="favicon3-32" width="32" height="32"></canvas>
+                    <canvas id="favicon3-64" width="64" height="64"></canvas>
+                    <p>16x16, 32x32, 64x64</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <h2>Download Your Favicon:</h2>
+            <button onclick="downloadFavicon('favicon1-32', 'favicon-modern-si.ico')">Download Modern SI</button>
+            <button onclick="downloadFavicon('favicon2-32', 'favicon-code-si.ico')">Download Code SI</button>
+            <button onclick="downloadFavicon('favicon3-32', 'favicon-professional-si.ico')">Download Professional SI</button>
+        </div>
+        
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Choose your preferred design above</li>
+                <li>Click the download button to get the favicon</li>
+                <li>Replace the current favicon.ico in your website</li>
+                <li>Clear browser cache to see the new favicon</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Design 1: Modern SI with gradient
+        function drawModernSI(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const fontSize = Math.floor(size * 0.6);
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3B82F6');  // Blue
+            gradient.addColorStop(1, '#1E40AF');  // Darker blue
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add subtle border
+            ctx.strokeStyle = '#1E3A8A';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(0, 0, size, size);
+            
+            // Draw "SI" text
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = `bold ${fontSize}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SI', size/2, size/2);
+        }
+        
+        // Design 2: Code-themed SI
+        function drawCodeSI(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const fontSize = Math.floor(size * 0.5);
+            
+            // Background
+            ctx.fillStyle = '#1F2937';  // Dark gray
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add code brackets
+            ctx.fillStyle = '#10B981';  // Green
+            ctx.font = `bold ${Math.floor(size * 0.3)}px monospace`;
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+            ctx.fillText('<', 2, 2);
+            
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'bottom';
+            ctx.fillText('/>', size-2, size-2);
+            
+            // Draw "SI" in center
+            ctx.fillStyle = '#F59E0B';  // Amber
+            ctx.font = `bold ${fontSize}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SI', size/2, size/2);
+        }
+        
+        // Design 3: Professional SI
+        function drawProfessionalSI(canvas, size) {
+            const ctx = canvas.getContext('2d');
+            const fontSize = Math.floor(size * 0.6);
+            
+            // Background
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Border
+            ctx.strokeStyle = '#374151';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(1, 1, size-2, size-2);
+            
+            // Inner accent
+            ctx.fillStyle = '#EF4444';  // Red accent
+            ctx.fillRect(2, 2, size-4, Math.floor(size * 0.2));
+            
+            // Draw "SI" text
+            ctx.fillStyle = '#1F2937';
+            ctx.font = `bold ${fontSize}px serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('SI', size/2, size/2 + Math.floor(size * 0.1));
+        }
+        
+        // Initialize all favicons
+        function initializeFavicons() {
+            // Design 1 - Modern SI
+            drawModernSI(document.getElementById('favicon1-16'), 16);
+            drawModernSI(document.getElementById('favicon1-32'), 32);
+            drawModernSI(document.getElementById('favicon1-64'), 64);
+            
+            // Design 2 - Code SI
+            drawCodeSI(document.getElementById('favicon2-16'), 16);
+            drawCodeSI(document.getElementById('favicon2-32'), 32);
+            drawCodeSI(document.getElementById('favicon2-64'), 64);
+            
+            // Design 3 - Professional SI
+            drawProfessionalSI(document.getElementById('favicon3-16'), 16);
+            drawProfessionalSI(document.getElementById('favicon3-32'), 32);
+            drawProfessionalSI(document.getElementById('favicon3-64'), 64);
+        }
+        
+        // Download function
+        function downloadFavicon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            
+            // Create a temporary canvas for ICO format (32x32 is standard)
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = 32;
+            tempCanvas.height = 32;
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            // Draw the selected design at 32x32
+            if (canvasId.includes('favicon1')) {
+                drawModernSI(tempCanvas, 32);
+            } else if (canvasId.includes('favicon2')) {
+                drawCodeSI(tempCanvas, 32);
+            } else {
+                drawProfessionalSI(tempCanvas, 32);
+            }
+            
+            // Download as PNG (browsers will treat as favicon)
+            const link = document.createElement('a');
+            link.download = filename.replace('.ico', '.png');
+            link.href = tempCanvas.toDataURL();
+            link.click();
+        }
+        
+        // Initialize when page loads
+        window.onload = initializeFavicons;
+    </script>
+</body>
+</html>
