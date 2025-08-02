@@ -1,57 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Main Homepage with SHAFIQUL ISLAM profile and projects -->
     <url>
         <loc>https://www.qultec.com/</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        
+        <!-- Profile Images for SHAFIQUL ISLAM -->
+        <image:image>
+            <image:loc>https://www.qultec.com/images/avatar.jpg</image:loc>
+            <image:title>SHAFIQUL ISLAM - Expert Full Stack Developer Profile</image:title>
+            <image:caption>Professional profile photo of Shafiqul Islam, Expert Full Stack Developer specializing in Java Spring Boot, Angular, React, Android and Flutter development from Bangladesh</image:caption>
+        </image:image>
+        
+        <!-- Homepage Screenshot -->
+        <image:image>
+            <image:loc>https://www.qultec.com/images/home page.png</image:loc>
+            <image:title>SHAFIQUL ISLAM Portfolio Homepage</image:title>
+            <image:caption>Homepage of Shafiqul Islam's professional portfolio website showcasing full stack development services</image:caption>
+        </image:image>
+        
+        <!-- Project Images -->
+        <image:image>
+            <image:loc>https://www.qultec.com/images/project-1.jpg</image:loc>
+            <image:title>Blood Donation Android App - SHAFIQUL ISLAM</image:title>
+            <image:caption>Native Android blood donation application developed by Shafiqul Islam using Java and Firebase</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/images/project-2.PNG</image:loc>
+            <image:title>University Management System - SHAFIQUL ISLAM</image:title>
+            <image:caption>Java Swing desktop university management system developed by Shafiqul Islam</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/images/project-3.png</image:loc>
+            <image:title>E-Commerce Spring Boot Platform - SHAFIQUL ISLAM</image:title>
+            <image:caption>Complete e-commerce platform built with Spring Boot and Thymeleaf by Shafiqul Islam</image:caption>
+        </image:image>
+        
+        <!-- Portfolio Gallery Images -->
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/activity1.jpeg</image:loc>
+            <image:title>SHAFIQUL ISLAM Professional Activity</image:title>
+            <image:caption>Shafiqul Islam professional development activity and training session</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/activity2.jpeg</image:loc>
+            <image:title>SHAFIQUL ISLAM Team Collaboration</image:title>
+            <image:caption>Shafiqul Islam team collaboration and project development workshop</image:caption>
+        </image:image>
+        
+        <!-- Video Content -->
+        <video:video>
+            <video:thumbnail_loc>https://www.qultec.com/images/project-2.PNG</video:thumbnail_loc>
+            <video:title>SHAFIQUL ISLAM - E-Commerce Platform Demo Video</video:title>
+            <video:description>Complete walkthrough demonstration of Shafiqul Islam's Spring Boot e-commerce application featuring user authentication, product management, shopping cart functionality, and secure payment integration. Professional portfolio showcase.</video:description>
+            <video:content_loc>https://www.qultec.com/1264992-Ecommerce-Project.mp4</video:content_loc>
+            <video:duration>300</video:duration>
+            <video:publication_date>2025-08-02T16:00:00+00:00</video:publication_date>
+            <video:family_friendly>yes</video:family_friendly>
+            <video:view_count>500</video:view_count>
+            <video:tag>Shafiqul Islam</video:tag>
+            <video:tag>Full Stack Developer</video:tag>
+            <video:tag>Spring Boot</video:tag>
+            <video:tag>E-commerce</video:tag>
+            <video:tag>Java Developer</video:tag>
+            <video:tag>Bangladesh</video:tag>
+        </video:video>
     </url>
+    <!-- About Section with Profile Details -->
     <url>
         <loc>https://www.qultec.com/#about</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/images/avatar.jpg</image:loc>
+            <image:title>SHAFIQUL ISLAM Professional Profile</image:title>
+            <image:caption>About Shafiqul Islam - Expert Full Stack Developer with 5+ years experience in Java, Spring Boot, Angular, React, Android and Flutter development</image:caption>
+        </image:image>
     </url>
+    
+    <!-- Skills and Expertise Section -->
     <url>
         <loc>https://www.qultec.com/#skills</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Professional Experience Section -->
     <url>
         <loc>https://www.qultec.com/#experience</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Education Background -->
     <url>
         <loc>https://www.qultec.com/#education</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
+    
+    <!-- Portfolio Projects with Images -->
     <url>
         <loc>https://www.qultec.com/#portfolio</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.95</priority>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/portfolio-02.jpg</image:loc>
+            <image:title>SHAFIQUL ISLAM Portfolio Project</image:title>
+            <image:caption>Professional portfolio project by Shafiqul Islam showcasing web development expertise</image:caption>
+        </image:image>
+        
+        <image:image>
+            <image:loc>https://www.qultec.com/activity/portfolio-06.jpg</image:loc>
+            <image:title>SHAFIQUL ISLAM Portfolio Showcase</image:title>
+            <image:caption>Advanced portfolio project demonstrating Shafiqul Islam's full stack development capabilities</image:caption>
+        </image:image>
     </url>
+    
+    <!-- Video Demonstrations Section -->
     <url>
         <loc>https://www.qultec.com/#videos</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.85</priority>
     </url>
+    
+    <!-- Contact Information -->
     <url>
         <loc>https://www.qultec.com/#contact</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Professional Resume PDF -->
     <url>
         <loc>https://www.qultec.com/material-resume.pdf</loc>
-        <lastmod>2025-08-02T12:00:00+00:00</lastmod>
+        <lastmod>2025-08-02T16:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.9</priority>
     </url>
 </urlset>

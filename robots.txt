@@ -1,10 +1,22 @@
+# SHAFIQUL ISLAM - Expert Full Stack Developer Portfolio
+# robots.txt for https://www.qultec.com/
+
 User-agent: *
 Allow: /
 
-# Sitemap
+# Priority crawling for SHAFIQUL ISLAM profile pages
+Allow: /index.html
+Allow: /#about
+Allow: /#skills
+Allow: /#experience
+Allow: /#portfolio
+Allow: /#videos
+Allow: /#contact
+
+# Enhanced Sitemap location
 Sitemap: https://www.qultec.com/sitemap.xml
 
-# Allow all search engines to crawl the site
+# Allow all major search engines to crawl SHAFIQUL ISLAM portfolio
 User-agent: Googlebot
 Allow: /
 
@@ -17,14 +29,10 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Crawl-delay (optional - helps with server load)
+# Crawl-delay for server optimization
 Crawl-delay: 1
 
-# Disallow specific file types if needed
-# Disallow: *.mp4$
-# Disallow: *.pdf$
-
-# Allow important files
+# Allow important directories and files for SHAFIQUL ISLAM
 Allow: /images/
 Allow: /css/
 Allow: /scripts/
@@ -37,3 +45,7 @@ Allow: /*.png
 Allow: /*.gif
 Allow: /*.ico
 Allow: /*.pdf
+Allow: /*.mp4
+
+# Professional Full Stack Developer from Bangladesh
+# Specializing in Java Spring Boot, Angular, React, Android, Flutter
