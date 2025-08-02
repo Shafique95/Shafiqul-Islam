@@ -112,14 +112,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome - Latest Version for Better Icon Support -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://pro.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" crossorigin="anonymous" onerror="this.remove()">
     
     <!-- Favicon -->
     <link rel="icon" href="144.png" type="image/x-icon">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Icon Fallback Script -->
+    <script>
+        // Ensure icons load properly
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if Font Awesome is loaded
+            setTimeout(function() {
+                const testIcon = document.createElement('i');
+                testIcon.className = 'fas fa-calendar-alt';
+                testIcon.style.visibility = 'hidden';
+                document.body.appendChild(testIcon);
+                
+                const computedStyle = window.getComputedStyle(testIcon, ':before');
+                if (computedStyle.content === 'none' || computedStyle.content === '') {
+                    // Font Awesome failed to load, use emoji fallbacks
+                    console.log('Using emoji fallbacks for icons');
+                    const icons = {
+                        'fa-calendar-alt': '📅',
+                        'fa-envelope': '📧', 
+                        'fa-phone': '📞',
+                        'fa-map-marker-alt': '📍'
+                    };
+                    
+                    Object.keys(icons).forEach(className => {
+                        const elements = document.querySelectorAll(`i.${className.replace('-', '\\-')}`);
+                        elements.forEach(el => {
+                            el.innerHTML = icons[className];
+                            el.style.fontFamily = 'inherit';
+                        });
+                    });
+                }
+                document.body.removeChild(testIcon);
+            }, 1000);
+        });
+    </script>
     
     <!-- JSON-LD Structured Data for SEO - Enhanced for Search Visibility -->
     <script type="application/ld+json">
@@ -586,6 +622,19 @@
             }
         }
         
+        /* Icon Fallback for Better UI */
+        .icon-calendar::before { content: "📅"; }
+        .icon-email::before { content: "📧"; }
+        .icon-phone::before { content: "📞"; }
+        .icon-location::before { content: "📍"; }
+        
+        /* Ensure icons are visible */
+        i[class*="fa-"] {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", sans-serif !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+        }
+        
         .glass-effect {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -849,49 +898,49 @@
                     </div>
                 </div>
                 
-                <!-- Bio Information -->
+                <!-- Bio Information - Compact & Beautiful Design -->
                 <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
-                        <h3 class="text-2xl font-display font-semibold text-gray-800 mb-6">Personal Info</h3>
+                    <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+                        <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Personal Info</h3>
                         
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                                    <i class="far fa-calendar-alt text-blue-600"></i>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors">
+                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="far fa-calendar-alt text-white text-sm"></i>
                                 </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Birth Date</div>
-                                    <div class="font-semibold text-gray-800">August 2, 1995</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                                    <i class="far fa-envelope text-purple-600"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Email</div>
-                                    <div class="font-semibold text-gray-800">www.shafiquebd@gmail.com</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Birth Date</div>
+                                    <div class="font-semibold text-gray-800 text-sm">August 2, 1995</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center space-x-4">
-                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-phone text-green-600"></i>
+                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-purple-50 transition-colors">
+                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="far fa-envelope text-white text-sm"></i>
                                 </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Phone</div>
-                                    <div class="font-semibold text-gray-800">+8801934776188</div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Email</div>
+                                    <div class="font-semibold text-gray-800 text-sm truncate">www.shafiquebd@gmail.com</div>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start space-x-4">
-                                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-map-marker-alt text-red-600"></i>
+                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-green-50 transition-colors">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-white text-sm"></i>
                                 </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Location</div>
-                                    <div class="font-semibold text-gray-800">
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Phone</div>
+                                    <div class="font-semibold text-gray-800 text-sm">+8801934776188</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-red-50 transition-colors">
+                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Location</div>
+                                    <div class="font-semibold text-gray-800 text-sm leading-tight">
                                         Sazanpur, Nikli<br>
                                         Kishoreganj, Bangladesh
                                     </div>
