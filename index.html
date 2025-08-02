@@ -112,9 +112,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome - Latest Version for Better Icon Support -->
+    <!-- Font Awesome - Multiple CDN Sources for Better Loading -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://pro.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" crossorigin="anonymous" onerror="this.remove()">
+    <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet" crossorigin="anonymous" onerror="this.remove()">
+    
+    <!-- FontAwesome JavaScript Fallback -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" onerror="console.log('FontAwesome Kit failed to load')"></script>
     
     <!-- Favicon -->
     <link rel="icon" href="144.png" type="image/x-icon">
@@ -811,27 +815,27 @@
                         <br><strong>💼 Available for Hire - Remote & On-site Projects</strong>
                     </p>
                 
-                <!-- Social Links -->
+                <!-- Social Links with Icon Fallbacks -->
                 <div class="flex justify-center space-x-6 mb-12" data-aos="fade-up" data-aos-delay="800">
                     <a href="https://github.com/shafique95" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-github text-gray-700 group-hover:text-primary"></i>
+                        <i class="fab fa-github text-gray-700 group-hover:text-primary" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'; this.className='text-gray-700 group-hover:text-primary'"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-linkedin-in text-gray-700 group-hover:text-blue-600"></i>
+                        <i class="fab fa-linkedin-in text-gray-700 group-hover:text-blue-600" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'; this.className='text-gray-700 group-hover:text-blue-600'"></i>
                     </a>
                     <a href="https://twitter.com/shafique0193477" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-twitter text-gray-700 group-hover:text-blue-400"></i>
+                        <i class="fab fa-twitter text-gray-700 group-hover:text-blue-400" onload="this.style.display='inline'" onerror="this.innerHTML='🐦'; this.className='text-gray-700 group-hover:text-blue-400'"></i>
                     </a>
                     <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-facebook-f text-gray-700 group-hover:text-blue-600"></i>
+                        <i class="fab fa-facebook-f text-gray-700 group-hover:text-blue-600" onload="this.style.display='inline'" onerror="this.innerHTML='📘'; this.className='text-gray-700 group-hover:text-blue-600'"></i>
                     </a>
                     <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
-                        <i class="fab fa-instagram text-gray-700 group-hover:text-pink-600"></i>
+                        <i class="fab fa-instagram text-gray-700 group-hover:text-pink-600" onload="this.style.display='inline'" onerror="this.innerHTML='📷'; this.className='text-gray-700 group-hover:text-pink-600'"></i>
                     </a>
                 </div>
                 
@@ -903,47 +907,39 @@
                     <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
                         <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Personal Info</h3>
                         
-                        <div class="grid grid-cols-1 gap-3">
-                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-blue-50 transition-colors">
-                                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-blue-50 transition-colors">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mb-2">
                                     <i class="far fa-calendar-alt text-white text-sm"></i>
                                 </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Birth Date</div>
-                                    <div class="font-semibold text-gray-800 text-sm">August 2, 1995</div>
-                                </div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Birth Date</div>
+                                <div class="font-semibold text-gray-800 text-sm">August 2, 1995</div>
                             </div>
                             
-                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-purple-50 transition-colors">
-                                <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-purple-50 transition-colors">
+                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mb-2">
                                     <i class="far fa-envelope text-white text-sm"></i>
                                 </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Email</div>
-                                    <div class="font-semibold text-gray-800 text-sm truncate">www.shafiquebd@gmail.com</div>
-                                </div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Email</div>
+                                <div class="font-semibold text-gray-800 text-xs truncate max-w-full">www.shafiquebd@gmail.com</div>
                             </div>
                             
-                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-green-50 transition-colors">
-                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-green-50 transition-colors">
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mb-2">
                                     <i class="fas fa-phone text-white text-sm"></i>
                                 </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Phone</div>
-                                    <div class="font-semibold text-gray-800 text-sm">+8801934776188</div>
-                                </div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Phone</div>
+                                <div class="font-semibold text-gray-800 text-sm">+8801934776188</div>
                             </div>
                             
-                            <div class="flex items-center space-x-3 p-2 rounded-lg hover:bg-red-50 transition-colors">
-                                <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-red-50 transition-colors">
+                                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mb-2">
                                     <i class="fas fa-map-marker-alt text-white text-sm"></i>
                                 </div>
-                                <div class="flex-1 min-w-0">
-                                    <div class="text-xs text-gray-500 uppercase tracking-wide">Location</div>
-                                    <div class="font-semibold text-gray-800 text-sm leading-tight">
-                                        Sazanpur, Nikli<br>
-                                        Kishoreganj, Bangladesh
-                                    </div>
+                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</div>
+                                <div class="font-semibold text-gray-800 text-xs leading-tight">
+                                    Sazanpur, Nikli<br>
+                                    Kishoreganj, Bangladesh
                                 </div>
                             </div>
                         </div>
@@ -1775,27 +1771,27 @@
                 <div class="text-2xl font-display font-bold gradient-text mb-4">Shafiqul Islam</div>
                 <p class="text-gray-400 mb-8">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
                 
-                <!-- Social Links -->
+                <!-- Social Links with Icon Fallbacks -->
                 <div class="flex justify-center space-x-6 mb-8">
                     <a href="https://github.com/shafique95" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-github" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-linkedin-in" onload="this.style.display='inline'" onerror="this.innerHTML='🔗'"></i>
                     </a>
                     <a href="https://twitter.com/shafique0193477" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-twitter" onload="this.style.display='inline'" onerror="this.innerHTML='🐦'"></i>
                     </a>
                     <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-facebook-f" onload="this.style.display='inline'" onerror="this.innerHTML='📘'"></i>
                     </a>
                     <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
                        class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-instagram" onload="this.style.display='inline'" onerror="this.innerHTML='📷'"></i>
                     </a>
                 </div>
                 
@@ -1813,6 +1809,58 @@
     
     <!-- Custom JavaScript -->
     <script>
+        // FontAwesome Icons Fallback - Enhanced Detection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if FontAwesome is loaded
+            setTimeout(function() {
+                const faIcons = document.querySelectorAll('i[class*="fa-"]');
+                faIcons.forEach(icon => {
+                    const computedStyle = window.getComputedStyle(icon, ':before');
+                    const content = computedStyle.getPropertyValue('content');
+                    
+                    // If FontAwesome didn't load properly
+                    if (!content || content === 'none' || content === '""') {
+                        const classList = icon.classList.toString();
+                        
+                        // Social Media Icons Fallback
+                        if (classList.includes('fa-github')) icon.innerHTML = '🔗';
+                        else if (classList.includes('fa-linkedin')) icon.innerHTML = '🔗';
+                        else if (classList.includes('fa-twitter')) icon.innerHTML = '🐦';
+                        else if (classList.includes('fa-facebook')) icon.innerHTML = '📘';
+                        else if (classList.includes('fa-instagram')) icon.innerHTML = '📷';
+                        
+                        // Personal Info Icons Fallback  
+                        else if (classList.includes('fa-calendar')) icon.innerHTML = '📅';
+                        else if (classList.includes('fa-envelope')) icon.innerHTML = '📧';
+                        else if (classList.includes('fa-phone')) icon.innerHTML = '📞';
+                        else if (classList.includes('fa-map-marker')) icon.innerHTML = '📍';
+                        
+                        // Other Common Icons
+                        else if (classList.includes('fa-download')) icon.innerHTML = '⬇️';
+                        else if (classList.includes('fa-chevron-down')) icon.innerHTML = '⬇️';
+                        else if (classList.includes('fa-bars')) icon.innerHTML = '☰';
+                        else if (classList.includes('fa-times')) icon.innerHTML = '✕';
+                        else if (classList.includes('fa-search-plus')) icon.innerHTML = '🔍';
+                        else if (classList.includes('fa-chevron-left')) icon.innerHTML = '⬅️';
+                        else if (classList.includes('fa-chevron-right')) icon.innerHTML = '➡️';
+                        else if (classList.includes('fa-play')) icon.innerHTML = '▶️';
+                        else if (classList.includes('fa-pause')) icon.innerHTML = '⏸️';
+                        else if (classList.includes('fa-code')) icon.innerHTML = '💻';
+                        else if (classList.includes('fa-layer-group')) icon.innerHTML = '📚';
+                        else if (classList.includes('fa-database')) icon.innerHTML = '🗄️';
+                        else if (classList.includes('fa-tools')) icon.innerHTML = '🛠️';
+                        else if (classList.includes('fa-star')) icon.innerHTML = '⭐';
+                        else icon.innerHTML = '🔗'; // Default fallback
+                        
+                        // Remove FontAwesome classes and add emoji styling
+                        icon.className = icon.className.replace(/fa[bslr]?/g, '').replace(/fa-[\w-]+/g, '').trim();
+                        icon.style.fontFamily = 'inherit';
+                        icon.style.fontSize = 'inherit';
+                    }
+                });
+            }, 1000); // Wait 1 second for FontAwesome to load
+        });
+
         // Initialize AOS
         AOS.init({
             duration: 1000,
