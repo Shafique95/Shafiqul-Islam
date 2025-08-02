@@ -873,9 +873,9 @@
                 <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8 lg:gap-6 items-start">
+            <div class="grid lg:grid-cols-1 gap-8 lg:gap-6 items-start">
                 <!-- About Content - Enhanced Mobile -->
-                <div class="lg:col-span-1 space-y-4 sm:space-y-6" data-aos="fade-right" itemprop="description">
+                <div class="space-y-4 sm:space-y-6" data-aos="fade-right" itemprop="description">
                     <h3 class="text-xl sm:text-2xl font-display font-semibold text-gray-800 mb-3 sm:mb-4">
                         Expert Full Stack Developer & Creative Problem Solver
                     </h3>
@@ -890,59 +890,84 @@
                     </p>
                 </div>
                 
-                <!-- Key Stats - Enhanced Mobile Grid -->
-                <div class="lg:col-span-1 space-y-6" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Statistics</h3>
-                    <div class="grid grid-cols-1 gap-4 sm:gap-6">
-                        <div class="text-center p-4 sm:p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg border border-blue-100">
-                            <div class="text-3xl sm:text-4xl font-bold text-primary mb-2">5+</div>
-                            <div class="text-sm sm:text-base text-gray-600 font-semibold">Years Experience</div>
+                <!-- Statistics and Personal Info in a Row -->
+                <div class="grid lg:grid-cols-2 gap-6 lg:gap-8" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Key Stats - Enhanced Beautiful Design -->
+                    <div class="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50 p-8 rounded-2xl shadow-xl border border-blue-100/50 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="text-white text-2xl">📊</span>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Statistics</h3>
                         </div>
-                        <div class="text-center p-4 sm:p-6 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl shadow-lg border border-purple-100">
-                            <div class="text-3xl sm:text-4xl font-bold text-secondary mb-2">15+</div>
-                            <div class="text-sm sm:text-base text-gray-600 font-semibold">Projects Completed</div>
+                        <div class="space-y-4">
+                            <div class="relative text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xs">✨</span>
+                                </div>
+                                <div class="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
+                                <div class="text-sm font-bold text-gray-700 uppercase tracking-wider">Years Experience</div>
+                            </div>
+                            <div class="relative text-center p-6 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-2xl shadow-lg border border-purple-100 hover:shadow-xl transition-all duration-300">
+                                <div class="absolute -top-2 -right-2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-xs">🚀</span>
+                                </div>
+                                <div class="text-4xl font-black bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-2">15+</div>
+                                <div class="text-sm font-bold text-gray-700 uppercase tracking-wider">Projects Completed</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Bio Information - Compact & Beautiful Design -->
-                <div class="lg:col-span-1 space-y-6" data-aos="fade-left" data-aos-delay="400">
-                    <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-all duration-300">
-                        <h3 class="text-xl font-display font-bold text-gray-800 mb-4 text-center">Personal Info</h3>
+                    
+                    <!-- Personal Info - Enhanced Beautiful Design -->
+                    <div class="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/50 p-8 rounded-2xl shadow-xl border border-blue-100/50 hover:shadow-2xl transition-all duration-500 hover:scale-105" data-aos="fade-left" data-aos-delay="400">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <span class="text-white text-2xl">👤</span>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Personal Info</h3>
+                        </div>
                         
-                        <div class="grid grid-cols-1 gap-3">
-                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-blue-50 transition-colors">
-                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mb-2">
-                                    <span class="icon-fallback text-white text-sm" data-icon="calendar">📅</span>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 rounded-xl bg-gradient-to-r from-blue-50 to-blue-100/50 hover:from-blue-100 hover:to-blue-150/50 transition-all duration-300 shadow-md hover:shadow-lg">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                                    <span class="text-white text-lg">📅</span>
                                 </div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Birth Date</div>
-                                <div class="font-semibold text-gray-800 text-sm">August 2, 1995</div>
+                                <div class="flex-1">
+                                    <div class="text-xs text-blue-600 uppercase tracking-wider font-bold mb-1">Birth Date</div>
+                                    <div class="font-bold text-gray-800">August 2, 1995</div>
+                                </div>
                             </div>
                             
-                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-purple-50 transition-colors">
-                                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mb-2">
-                                    <span class="icon-fallback text-white text-sm" data-icon="email">📧</span>
+                            <div class="flex items-center p-4 rounded-xl bg-gradient-to-r from-purple-50 to-purple-100/50 hover:from-purple-100 hover:to-purple-150/50 transition-all duration-300 shadow-md hover:shadow-lg">
+                                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                                    <span class="text-white text-lg">📧</span>
                                 </div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Email</div>
-                                <div class="font-semibold text-gray-800 text-xs truncate max-w-full">www.shafiquebd@gmail.com</div>
+                                <div class="flex-1">
+                                    <div class="text-xs text-purple-600 uppercase tracking-wider font-bold mb-1">Email</div>
+                                    <div class="font-bold text-gray-800 text-sm">www.shafiquebd@gmail.com</div>
+                                </div>
                             </div>
                             
-                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-green-50 transition-colors">
-                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mb-2">
-                                    <span class="icon-fallback text-white text-sm" data-icon="phone">📞</span>
+                            <div class="flex items-center p-4 rounded-xl bg-gradient-to-r from-green-50 to-green-100/50 hover:from-green-100 hover:to-green-150/50 transition-all duration-300 shadow-md hover:shadow-lg">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                                    <span class="text-white text-lg">📞</span>
                                 </div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Phone</div>
-                                <div class="font-semibold text-gray-800 text-sm">+8801934776188</div>
+                                <div class="flex-1">
+                                    <div class="text-xs text-green-600 uppercase tracking-wider font-bold mb-1">Phone</div>
+                                    <div class="font-bold text-gray-800">+8801934776188</div>
+                                </div>
                             </div>
                             
-                            <div class="flex flex-col items-center text-center p-3 rounded-lg hover:bg-red-50 transition-colors">
-                                <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center mb-2">
-                                    <span class="icon-fallback text-white text-sm" data-icon="location">📍</span>
+                            <div class="flex items-center p-4 rounded-xl bg-gradient-to-r from-red-50 to-red-100/50 hover:from-red-100 hover:to-red-150/50 transition-all duration-300 shadow-md hover:shadow-lg">
+                                <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                                    <span class="text-white text-lg">📍</span>
                                 </div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</div>
-                                <div class="font-semibold text-gray-800 text-xs leading-tight">
-                                    Sazanpur, Nikli<br>
-                                    Kishoreganj, Bangladesh
+                                <div class="flex-1">
+                                    <div class="text-xs text-red-600 uppercase tracking-wider font-bold mb-1">Location</div>
+                                    <div class="font-bold text-gray-800 text-sm leading-tight">
+                                        Sazanpur, Nikli<br>
+                                        Kishoreganj, Bangladesh
+                                    </div>
                                 </div>
                             </div>
                         </div>
