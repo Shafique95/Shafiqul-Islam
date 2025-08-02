@@ -329,6 +329,64 @@
     }
     </script>
     
+    <!-- Video Schema for Enhanced Search Visibility -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "SHAFIQUL ISLAM - E-Commerce Platform Demo Video",
+        "description": "Complete walkthrough demonstration of Shafiqul Islam's Spring Boot e-commerce application featuring user authentication, product management, shopping cart functionality, and secure payment integration. Professional portfolio showcase by Expert Full Stack Developer from Bangladesh specializing in Java, Angular, React development.",
+        "thumbnailUrl": "https://www.qultec.com/images/project-2.PNG",
+        "uploadDate": "2025-08-02T16:00:00+00:00",
+        "duration": "PT5M",
+        "contentUrl": "https://www.qultec.com/1264992-Ecommerce-Project.mp4",
+        "embedUrl": "https://www.qultec.com/#videos",
+        "width": 800,
+        "height": 450,
+        "videoQuality": "HD",
+        "inLanguage": "en",
+        "isFamilyFriendly": true,
+        "keywords": [
+            "Shafiqul Islam",
+            "Full Stack Developer",
+            "Spring Boot",
+            "E-commerce",
+            "Java Developer",
+            "Bangladesh",
+            "Portfolio Demo",
+            "Web Development",
+            "Professional Developer"
+        ],
+        "creator": {
+            "@type": "Person",
+            "@id": "https://www.qultec.com/#person",
+            "name": "SHAFIQUL ISLAM",
+            "jobTitle": "Expert Full Stack Developer",
+            "url": "https://www.qultec.com/",
+            "sameAs": [
+                "https://github.com/Shafique95",
+                "https://www.linkedin.com/in/shafiqul-islam"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Qultec - Shafiqul Islam Portfolio",
+            "url": "https://www.qultec.com/"
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "E-Commerce Platform",
+            "description": "Full-featured e-commerce application built with Spring Boot",
+            "applicationCategory": "BusinessApplication",
+            "programmingLanguage": ["Java", "JavaScript", "HTML", "CSS"],
+            "author": {
+                "@type": "Person",
+                "name": "SHAFIQUL ISLAM"
+            }
+        }
+    }
+    </script>
+    
     <!-- Custom Styles -->
     <style>
         /* Root and Global Styles */
@@ -1168,8 +1226,27 @@
             </div>
             
             <div class="max-w-4xl mx-auto">
-                <!-- Video Player -->
-                <div class="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <!-- Video Player with Schema.org markup -->
+                <div class="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-2xl overflow-hidden" 
+                     data-aos="fade-up" data-aos-delay="200"
+                     itemscope itemtype="https://schema.org/VideoObject">
+                    
+                    <!-- Video Schema Metadata -->
+                    <meta itemprop="name" content="SHAFIQUL ISLAM - E-Commerce Platform Demo Video">
+                    <meta itemprop="description" content="Complete walkthrough demonstration of Shafiqul Islam's Spring Boot e-commerce application featuring user authentication, product management, shopping cart functionality, and secure payment integration. Professional portfolio showcase by Expert Full Stack Developer from Bangladesh.">
+                    <meta itemprop="thumbnailUrl" content="https://www.qultec.com/images/project-2.PNG">
+                    <meta itemprop="uploadDate" content="2025-08-02T16:00:00+00:00">
+                    <meta itemprop="duration" content="PT5M">
+                    <meta itemprop="contentUrl" content="https://www.qultec.com/1264992-Ecommerce-Project.mp4">
+                    <meta itemprop="embedUrl" content="https://www.qultec.com/#videos">
+                    
+                    <!-- Creator Information -->
+                    <div itemprop="creator" itemscope itemtype="https://schema.org/Person" style="display: none;">
+                        <meta itemprop="name" content="SHAFIQUL ISLAM">
+                        <meta itemprop="jobTitle" content="Expert Full Stack Developer">
+                        <meta itemprop="url" content="https://www.qultec.com/">
+                    </div>
+                    
                     <div class="relative group">
                         <!-- Video Element -->
                         <video id="demoVideo" 
@@ -1178,25 +1255,27 @@
                                controls
                                preload="metadata"
                                width="800"
-                               height="450">
+                               height="450"
+                               itemprop="contentUrl">
                             <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
                             <p>Your browser doesn't support HTML5 video. You can <a href="1264992-Ecommerce-Project.mp4">download the video</a> instead.</p>
                         </video>
                         
-                        <!-- Video Info -->
+                        <!-- Video Info with Enhanced Schema -->
                         <div class="p-8 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
                             <div class="flex items-start justify-between">
                                 <div class="flex-1">
-                                    <h3 class="text-2xl font-bold mb-2">E-Commerce Platform Demo</h3>
-                                    <p class="text-gray-300 mb-4 leading-relaxed">
-                                        Complete walkthrough of my Spring Boot e-commerce application featuring user authentication, 
-                                        product management, shopping cart functionality, and secure payment integration.
+                                    <h3 class="text-2xl font-bold mb-2" itemprop="name">E-Commerce Platform Demo by SHAFIQUL ISLAM</h3>
+                                    <p class="text-gray-300 mb-4 leading-relaxed" itemprop="description">
+                                        Complete walkthrough of SHAFIQUL ISLAM's Spring Boot e-commerce application featuring user authentication, 
+                                        product management, shopping cart functionality, and secure payment integration. Professional portfolio demo.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mb-4">
                                         <span class="px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-semibold">Spring Boot</span>
                                         <span class="px-3 py-1 bg-green-600 text-white rounded-full text-sm font-semibold">Thymeleaf</span>
                                         <span class="px-3 py-1 bg-purple-600 text-white rounded-full text-sm font-semibold">MySQL</span>
                                         <span class="px-3 py-1 bg-orange-600 text-white rounded-full text-sm font-semibold">Bootstrap</span>
+                                        <span class="px-3 py-1 bg-red-600 text-white rounded-full text-sm font-semibold">SHAFIQUL ISLAM</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center space-x-4 ml-6">
