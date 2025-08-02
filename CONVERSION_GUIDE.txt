@@ -1,0 +1,48 @@
+🎥 VIDEO CONVERSION GUIDE - STEP BY STEP
+===========================================
+
+Your video: C:\Users\USER\Desktop\qultec_project\Shafiqul-Islam\1264992-Ecommerce-Project.mp4
+Problem: Current codec not supported by web browsers
+Solution: Convert to H.264 + AAC format
+
+EASIEST METHOD - Online Conversion:
+==================================
+
+1. Go to: https://cloudconvert.com/mp4-converter
+2. Click "Select File" and choose your video
+3. Set these options:
+   - Output format: MP4
+   - Video Codec: H.264
+   - Audio Codec: AAC
+   - Quality: Keep original or "Good"
+4. Click "Convert"
+5. Download the converted file
+6. Rename it to: 1264992-Ecommerce-Project.mp4
+7. Replace the original file in your project folder
+
+ALTERNATIVE - HandBrake (Free Software):
+=======================================
+
+1. Download from: https://handbrake.fr/downloads.php
+2. Install and open HandBrake
+3. Click "Open Source" → select your video
+4. Choose "Web Optimized" preset
+5. Click "Start Encode"
+6. Replace your original file with the converted one
+
+WHY THIS FIXES THE PROBLEM:
+==========================
+- Current video uses unsupported codec
+- H.264 + AAC works in ALL browsers
+- Same quality, better compatibility
+- Your video player code is perfect - just needs compatible video
+
+AFTER CONVERSION:
+================
+✅ Video will play immediately
+✅ Works in all browsers
+✅ Mobile device compatible
+✅ Proper streaming support
+
+File location to replace:
+C:\Users\USER\Desktop\qultec_project\Shafiqul-Islam\1264992-Ecommerce-Project.mp4
