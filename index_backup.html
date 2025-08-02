@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shafiqul Islam - Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in Java, Spring Boot, Angular, Android, and Flutter development">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#8B5CF6',
+                        accent: '#06B6D4',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'bounce-slow': 'bounce 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="144.png" type="image/x-icon">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Root and Global Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #e5e7eb;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #3B82F6;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 font-sans" id="top">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[9999] glass-effect border-b border-white/20" data-aos="fade-down">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-display font-bold gradient-text">
+                    Shafiqul Islam
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Gallery</a>
+
+                    <a href="#recommendations" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Reviews</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700 hover:text-primary" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-white/20" id="mobile-menu">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-primary transition-colors duration-300">Gallery</a>
+
+                    <a href="#recommendations" class="text-gray-700 hover:text-primary transition-colors duration-300">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" style="animation-delay: -3s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-500/20 rounded-full blur-xl animate-float" style="animation-delay: -1.5s;"></div>
+        
+        <div class="container mx-auto px-6 relative z-30 pt-20">
+            <div class="text-center">
+                <!-- Profile Image -->
+                <div class="mb-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="relative inline-block">
+                        <img src="images/avatar.jpg" alt="Shafiqul Islam - Full Stack Developer" 
+                             class="w-48 h-48 rounded-full object-cover border-4 border-white shadow-2xl mx-auto animate-glow">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20"></div>
+                    </div>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6" data-aos="fade-up" data-aos-delay="400">
+                    <span class="gradient-text">Shafiqul Islam</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+                    Full Stack Developer specializing in 
+                    <span class="text-primary font-semibold">Java</span>, 
+                    <span class="text-secondary font-semibold">Spring Boot</span>, 
+                    <span class="text-accent font-semibold">Angular</span>, 
+                    <span class="text-purple-600 font-semibold">Android</span> & 
+                    <span class="text-blue-600 font-semibold">Flutter</span>
+                </p>
+                
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mb-12" data-aos="fade-up" data-aos-delay="800">
+                    <a href="https://github.com/shafique95" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-github text-gray-700 group-hover:text-primary"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-linkedin-in text-gray-700 group-hover:text-blue-600"></i>
+                    </a>
+                    <a href="https://twitter.com/shafique0193477" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-twitter text-gray-700 group-hover:text-blue-400"></i>
+                    </a>
+                    <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-facebook-f text-gray-700 group-hover:text-blue-600"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-instagram text-gray-700 group-hover:text-pink-600"></i>
+                    </a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="material-resume.pdf" target="_blank" 
+                       class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center group">
+                        <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 bg-white text-gray-700 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 hover:border-primary flex items-center justify-center group">
+                        <i class="fas fa-envelope mr-2 group-hover:text-primary"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow z-20">
+            <a href="#about" class="text-gray-400 hover:text-primary transition-colors duration-300 bg-white/10 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center border border-white/20 hover:border-primary/50">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- About Content -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <h3 class="text-2xl font-display font-semibold text-gray-800 mb-4">
+                        Full Stack Developer & Creative Problem Solver
+                    </h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Hello! I'm <span class="text-primary font-semibold">Shafiqul Islam</span>, a passionate Full Stack Developer with expertise in modern web technologies. I specialize in creating robust, scalable applications using Java, Spring Boot, Angular, and mobile technologies like Android and Flutter.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        With a strong foundation in both front-end and back-end development, I bring ideas to life through clean, efficient code and intuitive user experiences. I'm a quick learner, team player, and always excited to take on new challenges.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Beyond coding, I have experience in graphic design with tools like Adobe Photoshop, Illustrator, and Adobe XD, allowing me to contribute to the complete product development lifecycle.
+                    </p>
+                    
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
+                            <div class="text-3xl font-bold text-primary mb-2">3+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl">
+                            <div class="text-3xl font-bold text-secondary mb-2">15+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bio Information -->
+                <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-display font-semibold text-gray-800 mb-6">Personal Info</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="far fa-calendar-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Birth Date</div>
+                                    <div class="font-semibold text-gray-800">August 2, 1995</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <i class="far fa-envelope text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Email</div>
+                                    <div class="font-semibold text-gray-800">www.shafiquebd@gmail.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Phone</div>
+                                    <div class="font-semibold text-gray-800">+8801934776188</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-red-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Location</div>
+                                    <div class="font-semibold text-gray-800">
+                                        Sazanpur, Nikli<br>
+                                        Kishoreganj, Bangladesh
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Skills & Expertise
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    Proficient in modern technologies and frameworks for building scalable applications
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Programming Languages -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Languages</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Java</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">JavaScript</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">TypeScript</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Dart</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-layer-group text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Frameworks</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Spring Boot</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Angular</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">React</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Flutter</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Databases</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">MySQL</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Firebase</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">SQLite</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="800">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">IntelliJ IDEA</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">VS Code</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Git/GitHub</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Maven</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Work Experience
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Full Stack Developer</h3>
+                            <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">July 2021 - August 2022</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">The Computers Limited</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Developed and maintained full-stack applications using Java, Spring Boot, and Angular. Worked on enterprise-level projects with focus on scalable architecture and efficient code delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">ICT & Mathematics Trainer</h3>
+                            <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">May 2017 - Present</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">Student Aid Organization</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Teaching and training students in ICT and Mathematics. Developing curriculum and educational materials to enhance learning outcomes and building core competencies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Graphic Designer</h3>
+                            <span class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">June 2019 - May 2020</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">Sonali Stationary & Online Shop</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Created visual designs for marketing materials, product catalogs, and digital content. Specialized in multimedia design, branding, and print design solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Education & Training
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Education Item 1 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Diploma in Computer Science</h3>
+                            <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-semibold">2021-2022</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">IsDB BISEW</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Comprehensive diploma program covering enterprise system analysis and development with focus on J2EE technologies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Masters in Mathematics</h3>
+                            <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full font-semibold">2016-2018</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">National University</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            CGPA: 3.31 out of 4.0. Advanced mathematical concepts and problem-solving methodologies.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Item 3 -->
+                <div class="timeline-item pl-8 pb-12" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Bachelor in Mathematics</h3>
+                            <span class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">2012-2016</span>
+                        </div>
+                        <p class="text-primary font-semibold mb-2">National University</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            CGPA: 3.36 out of 4.0. Strong foundation in mathematical analysis and logical reasoning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Featured Projects
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    A showcase of my recent work across web and mobile applications
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-500 relative overflow-hidden">
+                        <img src="images/project-1.jpg" alt="Blood Donation Android App" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="px-2 py-1 bg-white/20 rounded-full text-xs font-semibold">Android</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Blood Donation App</h3>
+                        <p class="text-gray-600 mb-4">Native Android application for blood bank management with Firebase integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Java</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Firebase</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">SQLite</span>
+                        </div>
+                        <a href="https://github.com/Shafique95/Android-Native-Project" target="_blank" 
+                           class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-blue-500 relative overflow-hidden">
+                        <img src="images/project-3.png" alt="E-Commerce Spring Boot Application" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="px-2 py-1 bg-white/20 rounded-full text-xs font-semibold">Spring Boot</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Full-featured e-commerce application built with Spring Boot and Thymeleaf.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Spring Boot</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Thymeleaf</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">MySQL</span>
+                        </div>
+                        <a href="https://github.com/Shafique95/Ecommerce-SpringBoot-Project" target="_blank" 
+                           class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 relative overflow-hidden">
+                        <img src="images/project-2.PNG" alt="University Management System" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="px-2 py-1 bg-white/20 rounded-full text-xs font-semibold">Java Swing</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">University Management</h3>
+                        <p class="text-gray-600 mb-4">Desktop application for comprehensive university administration and management.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Java Swing</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">MySQL</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">JDBC</span>
+                        </div>
+                        <a href="https://github.com/Shafique95/Advance-java-swing-project" target="_blank" 
+                           class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-github mr-2"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Photo Gallery
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    Capturing moments from my professional journey and achievements
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="200" onclick="openLightbox('activity/activity1.jpeg', 'Professional Activity', 'Training & Development Session')">
+                    <img src="activity/activity1.jpeg" alt="Professional Activity 1" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Professional Activity</h3>
+                        <p class="text-sm text-gray-200">Training & Development</p>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="300" onclick="openLightbox('activity/activity2.jpeg', 'Team Collaboration', 'Project Development Workshop')">
+                    <img src="activity/activity2.jpeg" alt="Professional Activity 2" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Team Collaboration</h3>
+                        <p class="text-sm text-gray-200">Project Development</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="400" onclick="openLightbox('activity/activity3.jpeg', 'Workshop Session', 'Technical Training Program')">
+                    <img src="activity/activity3.jpeg" alt="Professional Activity 3" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Workshop Session</h3>
+                        <p class="text-sm text-gray-200">Technical Training</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="500" onclick="openLightbox('activity/activity4.jpeg', 'Achievement Event', 'Recognition Ceremony Highlights')">
+                    <img src="activity/activity4.jpeg" alt="Professional Activity 4" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Achievement Event</h3>
+                        <p class="text-sm text-gray-200">Recognition Ceremony</p>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="600" onclick="openLightbox('activity/activity5.jpeg', 'Conference Participation', 'Industry Networking Event')">
+                    <img src="activity/activity5.jpeg" alt="Professional Activity 5" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Conference Participation</h3>
+                        <p class="text-sm text-gray-200">Industry Networking</p>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer" 
+                     data-aos="fade-up" data-aos-delay="700" onclick="openLightbox('activity/activity6.jpeg', 'Team Building', 'Collaborative Learning Session')">
+                    <img src="activity/activity6.jpeg" alt="Professional Activity 6" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
+                            <i class="fas fa-search-plus text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-lg font-semibold">Team Building</h3>
+                        <p class="text-sm text-gray-200">Collaborative Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[10000] hidden items-center justify-center p-4">
+        <div class="relative max-w-6xl max-h-[90vh] w-full">
+            <!-- Close Button -->
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
+                <img id="lightboxImage" src="" alt="" class="w-full h-auto max-h-[70vh] object-contain">
+                <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex-1">
+                            <h3 id="lightboxTitle" class="text-2xl font-bold text-gray-800 mb-2">Image Title</h3>
+                            <p id="lightboxDescription" class="text-gray-600">Image Description</p>
+                        </div>
+                        <div class="flex space-x-3 ml-4">
+                            <!-- Download Button -->
+                            <button onclick="downloadImage()" class="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300">
+                                <i class="fas fa-download"></i>
+                                <span>Download</span>
+                            </button>
+                            <!-- Share Button -->
+                            <button onclick="shareImage()" class="flex items-center space-x-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-300">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Stats -->
+                    <div class="flex items-center justify-between text-sm text-gray-500 border-t pt-4">
+                        <div class="flex space-x-4">
+                            <span><i class="far fa-eye mr-1"></i><span id="imageViews">0</span> views</span>
+                            <span><i class="far fa-heart mr-1"></i><span id="imageLikes">0</span> likes</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button onclick="likeImage()" class="text-red-500 hover:text-red-600 transition-colors">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button onclick="favoriteImage()" class="text-yellow-500 hover:text-yellow-600 transition-colors">
+                                <i class="far fa-star"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="py-20 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Recommendations
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    What colleagues and clients say about working with me
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recommendation 1 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">
+                        "Shafiqul is an exceptional full-stack developer with deep knowledge of Java and Spring Boot. His problem-solving skills and attention to detail made our project a huge success."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ahmed Mahmud</h4>
+                            <p class="text-sm text-gray-500">Senior Project Manager</p>
+                            <p class="text-sm text-primary">The Computers Limited</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation 2 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">
+                        "Working with Shafiqul has been a pleasure. His expertise in Angular and modern web technologies helped us deliver a responsive and user-friendly application ahead of schedule."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            SR
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Rahman</h4>
+                            <p class="text-sm text-gray-500">Lead UI/UX Designer</p>
+                            <p class="text-sm text-primary">Tech Solutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation 3 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic leading-relaxed">
+                        "Shafiqul's training sessions are incredibly effective. His ability to explain complex programming concepts in simple terms has helped our team grow significantly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MH
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mohammad Hassan</h4>
+                            <p class="text-sm text-gray-500">Training Coordinator</p>
+                            <p class="text-sm text-primary">Student Aid Organization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA for Recommendations -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="800">
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Want to Work Together?</h3>
+                    <p class="text-gray-600 mb-6">Join the list of satisfied clients and colleagues who have worked with me</p>
+                    <a href="#contact" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-handshake mr-2"></i>
+                        Start Collaboration
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Get In Touch
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    Let's discuss how we can work together to bring your ideas to life
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <div>
+                        <h3 class="text-2xl font-display font-semibold text-gray-800 mb-6">Let's Connect</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            I'm always interested in new opportunities and exciting projects. Whether you have a question, a project idea, or just want to connect, feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-blue-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Email</div>
+                                <div class="font-semibold text-gray-800">www.shafiquebd@gmail.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-green-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Phone</div>
+                                <div class="font-semibold text-gray-800">+8801934776188</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-purple-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Location</div>
+                                <div class="font-semibold text-gray-800">Kishoreganj, Bangladesh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" data-aos="fade-left" data-aos-delay="200">
+                    <form action="https://formspree.io/f/mknyyqqa" method="POST" id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                      class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-300 resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center group">
+                            <i class="fas fa-paper-plane mr-2 group-hover:animate-pulse"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-display font-bold gradient-text mb-4">Shafiqul Islam</div>
+                <p class="text-gray-400 mb-8">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
+                
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://github.com/shafique95" target="_blank" 
+                       class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
+                       class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/shafique0193477" target="_blank" 
+                       class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
+                       class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
+                       class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Shafiqul Islam. All rights reserved. Built with ❤️ and Tailwind CSS.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('glass-effect');
+            } else {
+                nav.classList.remove('bg-white/90');
+                nav.classList.add('glass-effect');
+            }
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Sending...';
+                submitBtn.disabled = true;
+                
+                // Reset after 3 seconds (assuming form submission)
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+        }
+
+        // Skill cards hover effect
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Project cards hover effect
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.03) translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+
+        // Lightbox functionality
+        const lightboxImages = [
+            { src: 'activity/activity1.jpeg', title: 'Professional Activity', description: 'Training & Development Session', views: 1247, likes: 89 },
+            { src: 'activity/activity2.jpeg', title: 'Team Collaboration', description: 'Project Development Workshop', views: 956, likes: 67 },
+            { src: 'activity/activity3.jpeg', title: 'Workshop Session', description: 'Technical Training Program', views: 1534, likes: 112 },
+            { src: 'activity/activity4.jpeg', title: 'Achievement Event', description: 'Recognition Ceremony Highlights', views: 2145, likes: 167 },
+            { src: 'activity/activity5.jpeg', title: 'Conference Participation', description: 'Industry Networking Event', views: 876, likes: 54 },
+            { src: 'activity/activity6.jpeg', title: 'Team Building', description: 'Collaborative Learning Session', views: 1398, likes: 92 }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(imageSrc, title, description) {
+            currentImageIndex = lightboxImages.findIndex(img => img.src === imageSrc);
+            const image = lightboxImages[currentImageIndex];
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDescription = document.getElementById('lightboxDescription');
+            const imageViews = document.getElementById('imageViews');
+            const imageLikes = document.getElementById('imageLikes');
+            
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = title;
+            lightboxTitle.textContent = title;
+            lightboxDescription.textContent = description;
+            imageViews.textContent = image.views;
+            imageLikes.textContent = image.likes;
+            
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            
+            // Increment view count
+            lightboxImages[currentImageIndex].views++;
+            imageViews.textContent = lightboxImages[currentImageIndex].views;
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % lightboxImages.length;
+            const image = lightboxImages[currentImageIndex];
+            openLightbox(image.src, image.title, image.description);
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            const image = lightboxImages[currentImageIndex];
+            openLightbox(image.src, image.title, image.description);
+        }
+
+        // Image interaction functions
+        function downloadImage() {
+            const currentImage = lightboxImages[currentImageIndex];
+            const link = document.createElement('a');
+            link.href = currentImage.src;
+            link.download = `${currentImage.title.replace(/\s+/g, '_')}.jpg`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message
+            showNotification('Image downloaded successfully!', 'success');
+        }
+
+        function shareImage() {
+            const currentImage = lightboxImages[currentImageIndex];
+            const shareData = {
+                title: currentImage.title,
+                text: currentImage.description,
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData);
+            } else {
+                // Fallback - copy to clipboard
+                navigator.clipboard.writeText(`${shareData.title} - ${shareData.text} ${shareData.url}`);
+                showNotification('Image link copied to clipboard!', 'success');
+            }
+        }
+
+        function likeImage() {
+            lightboxImages[currentImageIndex].likes++;
+            const imageLikes = document.getElementById('imageLikes');
+            imageLikes.textContent = lightboxImages[currentImageIndex].likes;
+            
+            // Add heart animation
+            const heartBtn = event.target.closest('button');
+            heartBtn.innerHTML = '<i class="fas fa-heart"></i>';
+            heartBtn.classList.add('text-red-600');
+            
+            showNotification('Image liked!', 'success');
+        }
+
+        function favoriteImage() {
+            const starBtn = event.target.closest('button');
+            starBtn.innerHTML = '<i class="fas fa-star"></i>';
+            starBtn.classList.add('text-yellow-600');
+            showNotification('Added to favorites!', 'success');
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'ArrowLeft') {
+                previousImage();
+            }
+        });
+
+        
+        // Video control functions
+        function toggleVideoFullscreen() {
+            const video = document.getElementById('mainVideo');
+            if (video) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                    showNotification('🖥️ Entering fullscreen', 'success');
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                } else {
+                    showNotification('ℹ️ Fullscreen not supported', 'info');
+                }
+            }
+        }
+        
+        function toggleVideoSound() {
+            const video = document.getElementById('mainVideo');
+            const soundIcon = document.getElementById('soundIcon');
+            
+            if (video) {
+                video.muted = !video.muted;
+                
+                if (video.muted) {
+                    soundIcon.className = 'fas fa-volume-mute';
+                    showNotification('🔇 Video muted', 'info');
+                } else {
+                    soundIcon.className = 'fas fa-volume-up';
+                    showNotification('🔊 Video unmuted', 'success');
+                }
+            }
+        }
+        
+        // Enhanced video status update
+        function updateVideoStatus(status, color = 'gray') {
+            const statusBadge = document.getElementById('videoStatusBadge');
+            if (statusBadge) {
+                statusBadge.textContent = status;
+                statusBadge.className = `px-3 py-1 bg-black bg-opacity-60 text-white rounded-full text-sm backdrop-blur-sm border-2 border-${color}-400`;
+            }
+        }
+        
+        // Initialize hover video player
+        function initializeHoverVideoPlayer() {
+            const video = document.getElementById('mainVideo');
+            const durationBadge = document.getElementById('videoDurationBadge');
+            
+            if (!video) return;
+            
+            // Format time helper
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '--:--';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+            
+            // Video event listeners
+            video.addEventListener('loadedmetadata', () => {
+                updateVideoStatus('Ready to Hover', 'blue');
+                if (durationBadge) {
+                    durationBadge.textContent = formatTime(video.duration);
+                }
+                showNotification('✨ Hover over video to play!', 'info');
+            });
+            
+            video.addEventListener('canplay', () => {
+                updateVideoStatus('Ready', 'green');
+            });
+            
+            video.addEventListener('play', () => {
+                updateVideoStatus('Playing', 'green');
+            });
+            
+            video.addEventListener('pause', () => {
+                updateVideoStatus('Paused', 'yellow');
+            });
+            
+            video.addEventListener('ended', () => {
+                updateVideoStatus('Ended', 'blue');
+                showNotification('✅ Video completed!', 'success');
+            });
+            
+            video.addEventListener('error', (e) => {
+                const error = video.error;
+                let errorMsg = 'Error';
+                if (error) {
+                    switch(error.code) {
+                        case 1: errorMsg = 'Aborted'; break;
+                        case 2: errorMsg = 'Network Error'; break;
+                        case 3: errorMsg = 'Decode Error'; break;
+                        case 4: errorMsg = 'Not Supported'; break;
+                    }
+                }
+                updateVideoStatus(errorMsg, 'red');
+                showNotification('❌ Video error - check file format', 'error');
+            });
+            
+            video.addEventListener('waiting', () => {
+                updateVideoStatus('Buffering...', 'yellow');
+            });
+            
+            video.addEventListener('stalled', () => {
+                updateVideoStatus('Stalled', 'orange');
+            });
+            
+            // Click for fullscreen
+            video.addEventListener('click', toggleVideoFullscreen);
+        }
+
+        function playVideoThumbnail(videoSrc, title, description) {
+            // Scroll to video player
+            const video = document.getElementById('mainVideo');
+            if (video) {
+                video.scrollIntoView({ behavior: 'smooth' });
+                
+                // Auto-play on thumbnail click
+                setTimeout(() => {
+                    video.play().then(() => {
+                        showNotification(`🎬 Playing: ${title}`, 'success');
+                        updateVideoStatus('Playing', 'green');
+                    }).catch(() => {
+                        showNotification(`📺 Video loaded: ${title} - Hover to play!`, 'info');
+                        updateVideoStatus('Ready to Hover', 'blue');
+                    });
+                }, 1000);
+            }
+        }
+
+        function playPauseVideo() {
+            const video = document.getElementById('mainVideo');
+            const playBtn = document.getElementById('playPauseBtn');
+            
+            if (video.paused) {
+                video.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                video.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+
+        function toggleMute() {
+            const video = document.getElementById('mainVideo');
+            const muteBtn = document.getElementById('muteBtn');
+            
+            video.muted = !video.muted;
+            muteBtn.innerHTML = video.muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+        }
+
+        // Video progress bar functionality (simplified)
+        function updateProgress() {
+            const video = document.getElementById('mainVideo');
+            if (video && video.duration) {
+                const progressPercent = (video.currentTime / video.duration) * 100;
+                console.log(`Video progress: ${progressPercent.toFixed(2)}%`);
+            }
+        }
+
+        function seekVideo(e) {
+            const video = document.getElementById('mainVideo');
+            const progress = document.getElementById('videoProgress');
+            const clickX = e.offsetX;
+            const progressWidth = progress.offsetWidth;
+            const newTime = (clickX / progressWidth) * video.duration;
+            video.currentTime = newTime;
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 p-4 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' :
+                type === 'error' ? 'bg-red-500 text-white' :
+                'bg-blue-500 text-white'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'} mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Slide in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Slide out and remove
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Enhanced video event listeners with hover-to-play support
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('mainVideo');
+            const durationBadge = document.getElementById('videoDurationBadge');
+            
+            if (video) {
+                updateVideoStatus('Loading...');
+                
+                // Initialize hover video player
+                initializeHoverVideoPlayer();
+                
+                video.addEventListener('loadedmetadata', function() {
+                    updateVideoStatus('Ready to Hover');
+                    if (durationBadge && video.duration) {
+                        const mins = Math.floor(video.duration / 60);
+                        const secs = Math.floor(video.duration % 60);
+                        durationBadge.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+                    }
+                    showNotification('✨ Hover over video to play!', 'success');
+                });
+                
+                video.addEventListener('play', function() {
+                    updateVideoStatus('Playing');
+                });
+                
+                video.addEventListener('pause', function() {
+                    updateVideoStatus('Paused');
+                });
+                
+                video.addEventListener('ended', function() {
+                    updateVideoStatus('Completed');
+                    showNotification('✅ Video completed!', 'success');
+                });
+                
+                video.addEventListener('error', function(e) {
+                    updateVideoStatus('Error');
+                    console.error('Video error:', e);
+                    showNotification('❌ Video error - check file format', 'error');
+                });
+                
+                video.addEventListener('canplay', function() {
+                    updateVideoStatus('Ready');
+                });
+                
+                // Try to load the video
+                video.load();
+            }
+            
+            // Show helpful tips
+            setTimeout(() => {
+                showNotification('💡 Tip: Hover over the video to preview it!', 'info');
+            }, 3000);
+        });
+        
+        // Enhanced video functions that work with both players
+        function playCurrentVideo() {
+            const localPlayer = document.getElementById('localVideoPlayer');
+            const youtubePlayer = document.getElementById('youtubeVideoPlayer');
+            
+            if (localPlayer.style.display !== 'none') {
+                // Local video is active
+                playVideo();
+            } else {
+                // YouTube is active
+                showNotification('🎬 YouTube video ready to play!', 'success');
+            }
+        }
+        
+        function playVideo() {
+            const video = document.getElementById('mainVideo');
+            if (video) {
+                video.muted = false;
+                video.play().then(() => {
+                    showNotification('▶️ Local video playing!', 'success');
+                    updateVideoStatus('Playing');
+                }).catch(err => {
+                    showNotification('❌ Local video failed. Try YouTube player!', 'error');
+                    updateVideoStatus('Error - Try YouTube');
+                    
+                    // Auto-suggest YouTube
+                    setTimeout(() => {
+                        if (confirm('Local video failed. Switch to YouTube?')) {
+                            switchVideoTab('youtube');
+                        }
+                    }, 1000);
+                });
+            }
+        }
+        
+        function restartVideo() {
+            const localPlayer = document.getElementById('localVideoPlayer');
+            const youtubePlayer = document.getElementById('youtubeVideoPlayer');
+            
+            if (localPlayer.style.display !== 'none') {
+                // Restart local video
+                const video = document.getElementById('mainVideo');
+                if (video) {
+                    video.currentTime = 0;
+                    playVideo();
+                }
+            } else {
+                // Restart YouTube video
+                const iframe = document.getElementById('youtubeIframe');
+                if (iframe) {
+                    const currentSrc = iframe.src;
+                    iframe.src = currentSrc.replace('?', '?autoplay=1&');
+                    showNotification('🔄 YouTube video restarted!', 'success');
+                }
+            }
+        }
+        
+        function toggleFullscreen() {
+            const localPlayer = document.getElementById('localVideoPlayer');
+            
+            if (localPlayer.style.display !== 'none') {
+                // Fullscreen local video
+                const video = document.getElementById('mainVideo');
+                if (video) {
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                        showNotification('🖥️ Entering fullscreen', 'success');
+                    } else {
+                        showNotification('ℹ️ Fullscreen not supported', 'info');
+                    }
+                }
+            } else {
+                // YouTube handles its own fullscreen
+                showNotification('📺 Use YouTube\'s fullscreen button', 'info');
+            }
+        }
+        
+        function checkVideoStatus() {
+            const video = document.getElementById('mainVideo');
+            if (video) {
+                console.log('=== VIDEO DEBUG INFO ===');
+                console.log('Element:', video);
+                console.log('Source:', video.currentSrc);
+                console.log('ReadyState:', video.readyState);
+                console.log('NetworkState:', video.networkState);
+                console.log('Duration:', video.duration);
+                console.log('Paused:', video.paused);
+                console.log('Ended:', video.ended);
+                console.log('Error:', video.error);
+                console.log('========================');
+                
+                showNotification('� Check browser console for video details', 'info');
+            }
+        }
+        
+        function likeVideo() {
+            const likeBtn = event.target.closest('button');
+            const icon = likeBtn.querySelector('i');
+            
+            if (icon.classList.contains('fas')) {
+                icon.classList.remove('fas');
+                icon.classList.add('far');
+                showNotification('❤️ Liked!', 'success');
+            } else {
+                icon.classList.remove('far');
+                icon.classList.add('fas');
+                showNotification('💔 Unliked', 'info');
+            }
+        }
+        
+        function shareVideo() {
+            const shareData = {
+                title: 'E-commerce Platform Demo',
+                text: 'Check out this amazing e-commerce project!',
+                url: window.location.href
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData);
+            } else {
+                navigator.clipboard.writeText(shareData.url).then(() => {
+                    showNotification('🔗 Link copied to clipboard!', 'success');
+                });
+            }
+        }
+        
+        function downloadVideo() {
+            const link = document.createElement('a');
+            link.href = '1264992-Ecommerce-Project.mp4';
+            link.download = 'Ecommerce-Demo.mp4';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showNotification('⬇️ Download started!', 'success');
+        }
+
+        // Video Player Functionality
+        const video = document.getElementById('mainVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseSmall = document.getElementById('playPauseSmall');
+        const playIcon = document.getElementById('playIcon');
+        const playIconSmall = document.getElementById('playIconSmall');
+        const videoControls = document.getElementById('videoControls');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressBg = document.getElementById('progressBg');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeBtn = document.getElementById('volumeBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        // Play/Pause functionality
+        function togglePlayPause() {
+            if (video.paused) {
+                video.play();
+                playIcon.className = 'fas fa-pause text-white text-2xl';
+                playIconSmall.className = 'fas fa-pause';
+                videoControls.style.opacity = '0';
+                progressContainer.style.transform = 'translateY(0)';
+            } else {
+                video.pause();
+                playIcon.className = 'fas fa-play text-white text-2xl ml-1';
+                playIconSmall.className = 'fas fa-play';
+                videoControls.style.opacity = '1';
+            }
+        }
+
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        playPauseSmall.addEventListener('click', togglePlayPause);
+        video.addEventListener('click', togglePlayPause);
+
+        // Show/hide controls
+        video.addEventListener('mouseenter', () => {
+            if (!video.paused) {
+                progressContainer.style.transform = 'translateY(0)';
+            }
+        });
+
+        video.addEventListener('mouseleave', () => {
+            if (!video.paused) {
+                setTimeout(() => {
+                    progressContainer.style.transform = 'translateY(100%)';
+                }, 2000);
+            }
+        });
+
+        // Progress bar
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+            
+            currentTimeEl.textContent = formatTime(video.currentTime);
+        });
+
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
+        });
+
+        // Click on progress bar to seek
+        progressBg.addEventListener('click', (e) => {
+            const rect = progressBg.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        // Volume control
+        volumeBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                video.muted = true;
+                volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+
+        // Fullscreen
+        fullscreenBtn.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
+
+</html>

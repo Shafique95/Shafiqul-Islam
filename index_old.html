@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shafiqul Islam - Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in Java, Spring Boot, Angular, Android, and Flutter development">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#8B5CF6',
+                        accent: '#06B6D4',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Space Grotesk', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="144.png" type="image/x-icon">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            to { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 font-sans" id="top">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20" data-aos="fade-down">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-display font-bold gradient-text">
+                    Shafiqul Islam
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700 hover:text-primary" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-white/20" id="mobile-menu">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors duration-300">Experience</a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors duration-300">Education</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-primary transition-colors duration-300">Portfolio</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-xl animate-float" style="animation-delay: -3s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-cyan-500/20 rounded-full blur-xl animate-float" style="animation-delay: -1.5s;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <!-- Profile Image -->
+                <div class="mb-8" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="relative inline-block">
+                        <img src="images/avatar.jpg" alt="Shafiqul Islam - Full Stack Developer" 
+                             class="w-48 h-48 rounded-full object-cover border-4 border-white shadow-2xl mx-auto animate-glow">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-purple-500/20"></div>
+                    </div>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6" data-aos="fade-up" data-aos-delay="400">
+                    <span class="gradient-text">Shafiqul Islam</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+                    Full Stack Developer specializing in 
+                    <span class="text-primary font-semibold">Java</span>, 
+                    <span class="text-secondary font-semibold">Spring Boot</span>, 
+                    <span class="text-accent font-semibold">Angular</span>, 
+                    <span class="text-purple-600 font-semibold">Android</span> & 
+                    <span class="text-blue-600 font-semibold">Flutter</span>
+                </p>
+                
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mb-12" data-aos="fade-up" data-aos-delay="800">
+                    <a href="https://github.com/shafique95" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-github text-gray-700 group-hover:text-primary"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shafique95" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-linkedin-in text-gray-700 group-hover:text-blue-600"></i>
+                    </a>
+                    <a href="https://twitter.com/shafique0193477" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-twitter text-gray-700 group-hover:text-blue-400"></i>
+                    </a>
+                    <a href="https://www.facebook.com/shafique01934776188" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-facebook-f text-gray-700 group-hover:text-blue-600"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shafique01934776188" target="_blank" 
+                       class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                        <i class="fab fa-instagram text-gray-700 group-hover:text-pink-600"></i>
+                    </a>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="material-resume.pdf" target="_blank" 
+                       class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center group">
+                        <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 bg-white text-gray-700 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 hover:border-primary flex items-center justify-center group">
+                        <i class="fas fa-envelope mr-2 group-hover:text-primary"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    About Me
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- About Content -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <h3 class="text-2xl font-display font-semibold text-gray-800 mb-4">
+                        Full Stack Developer & Creative Problem Solver
+                    </h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Hello! I'm <span class="text-primary font-semibold">Shafiqul Islam</span>, a passionate Full Stack Developer with expertise in modern web technologies. I specialize in creating robust, scalable applications using Java, Spring Boot, Angular, and mobile technologies like Android and Flutter.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        With a strong foundation in both front-end and back-end development, I bring ideas to life through clean, efficient code and intuitive user experiences. I'm a quick learner, team player, and always excited to take on new challenges.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Beyond coding, I have experience in graphic design with tools like Adobe Photoshop, Illustrator, and Adobe XD, allowing me to contribute to the complete product development lifecycle.
+                    </p>
+                    
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
+                            <div class="text-3xl font-bold text-primary mb-2">3+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-cyan-50 rounded-xl">
+                            <div class="text-3xl font-bold text-secondary mb-2">15+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bio Information -->
+                <div class="space-y-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-display font-semibold text-gray-800 mb-6">Personal Info</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="far fa-calendar-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Birth Date</div>
+                                    <div class="font-semibold text-gray-800">August 2, 1995</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <i class="far fa-envelope text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Email</div>
+                                    <div class="font-semibold text-gray-800">www.shafiquebd@gmail.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-green-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Phone</div>
+                                    <div class="font-semibold text-gray-800">+8801934776188</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-red-600"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500">Location</div>
+                                    <div class="font-semibold text-gray-800">
+                                        Sazanpur, Nikli<br>
+                                        Kishoreganj, Bangladesh
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold gradient-text mb-4" data-aos="fade-up">
+                    Skills & Expertise
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" data-aos="fade-up" data-aos-delay="200"></div>
+                <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                    Proficient in modern technologies and frameworks for building scalable applications
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Programming Languages -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Languages</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Java</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">JavaScript</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">TypeScript</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Dart</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-layer-group text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Frameworks</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Spring Boot</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Angular</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">React</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Flutter</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Databases</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">MySQL</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Firebase</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">SQLite</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skill-card bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="800">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">IntelliJ IDEA</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">VS Code</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">Expert</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Git/GitHub</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Maven</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                    <div class="about-section">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="h2 fw-light mb-4">About Me</h2>
+                                <p>Hello! I’m Shafiqul Islam. I am passionate about Full Stack Development (Java, Spring Boot, Angular) design and Web Design. I am a skilled <strong>Full Stack Development</strong> and have Knowledge about graphic design
+                                    tools such as Adobe Photoshop,Illustrator and AdobeXd . I am a quick learner and a team worker that gets the job done.</p>
+                                <p>I can easily capitalize on low hanging fruits and quickly maximize timely deliverables for real-time schemas.</p>
+                            </div>
+                            <div class="col-md-5 offset-lg-1">
+                                <div class="row mt-2">
+                                    <h2 class="h2 fw-light mb-4">Bio</h2>
+                                    <div class="col-sm-5">
+                                        <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i>Birth Date</div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="pb-2">08/02/1995</div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="pb-2 fw-bolder"><i class="far fa-envelope pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Email</div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="pb-2">www.shafiquebd@gmail.com</div>
+                                    </div>
+                                    <!-- <div class="col-sm-5">
+                                        <div class="pb-2 fw-bolder"><i class="fab fa-skype pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Skype</div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="pb-2">username@skype.com</div>
+                                    </div> -->
+                                    <div class="col-sm-5">
+                                        <div class="pb-2 fw-bolder"><i class="fas fa-phone pe-2 text-muted" style="width:24px;opacity:0.85;"></i> Phone</div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="pb-2">+8801934776188</div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="pb-2 fw-bolder"><i class="fas fa-map-marker-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i>Permanent Address : </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="pb-2">Village: Sazanpur, Post:Jaraitala,Nikli, District: Kishoreganj
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-1-strong bg-white my-5 p-5" id="Courses">
+                    <div class="skills-section">
+                        <h2 class="h2 fw-light mb-4">Professional Skills</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- <div class="mb-3"><span class="fw-bolder">HTML</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                    </div>
+                                </div>
+                                 <div class="mb-3"><span class="fw-bolder">CSS</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="200" data-aos-anchor=".skills-section" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">JavaScript</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">WordPress</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">WordPress</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">WordPress</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">WordPress</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-info" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Advance</div>
+                                    </div>
+                                </div> -->
+                                <h3 class="h3 fw-light mb-4">Languages</h3>
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">Java</li>
+                                    <li class="list-group-item">Dart</li>
+                                    <li class="list-group-item">Fortran</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-sm">
+                                    <li class="list-group-item">JavaScript</li>
+                                    <li class="list-group-item">TypeScript</li>
+
+                                </ul>
+                                <ul class="list-group list-group-horizontal-md">
+                                    <li class="list-group-item">UML</li>
+                                    <li class="list-group-item">XML</li>
+                                    <li class="list-group-item">HTML</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-lg">
+                                    <li class="list-group-item">CSS</li>
+                                    <li class="list-group-item">UX Markup</li>
+                                    <li class="list-group-item">C</li>
+                                </ul>
+                                <p></p>
+                                <h3 class="h3 fw-light mb-4">Databases</h3>
+                                <ul class="list-group list-group-horizontal-xl">
+                                    <li class="list-group-item">Oracle</li>
+                                    <li class="list-group-item">MySQL</li>
+                                    <li class="list-group-item">PostgraSQL</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-xxl">
+                                    <li class="list-group-item">Firebase</li>
+                                    <li class="list-group-item">Firestore</li>
+                                    <li class="list-group-item">SQLite</li>
+                                </ul>
+                                <p></p>
+                                <h3 class="h3 fw-light mb-4">Web Design</h3>
+                                <ul class="list-group list-group-horizontal-xl">
+                                    <li class="list-group-item">HTML</li>
+                                    <li class="list-group-item">CSS</li>
+                                    <li class="list-group-item">Bootstrap</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-xxl">
+                                    <li class="list-group-item">JavaScript</li>
+                                    <li class="list-group-item">JQuery</li>
+                                    <li class="list-group-item">React Js</li>
+                                </ul>
+
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <!-- <div class="mb-3"><span class="fw-bolder">Adobe Photoshop</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Master</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">Adobe Illustrator</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="400" data-aos-anchor=".skills-section" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">Sketch</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="500" data-aos-anchor=".skills-section" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Expert</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><span class="fw-bolder">Adobe XD</span>
+                                    <div class="progress my-2 rounded" style="height: 20px">
+                                        <div class="progress-bar bg-secondary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="600" data-aos-anchor=".skills-section" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Beginner</div>
+                                    </div>
+                                </div> -->
+                                <h3 class="h3 fw-light mb-4">Framework & Libreries</h3>
+
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">Spring</li>
+                                    <li class="list-group-item">JQuery</li>
+                                    <li class="list-group-item">JSF</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-sm">
+                                    <li class="list-group-item">SpringBoot</li>
+                                    <li class="list-group-item">Jasper Report</li>
+
+                                </ul>
+                                <ul class="list-group list-group-horizontal-md">
+                                    <li class="list-group-item">Hibernate</li>
+                                    <li class="list-group-item">Ract js
+                                    </li>
+                                    <li class="list-group-item">Swing
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-lg">
+                                    <li class="list-group-item">Angular</li>
+                                    <li class="list-group-item">Bootstrap</li>
+                                    <li class="list-group-item">Flutter</li>
+                                </ul>
+                                <p></p>
+                                <h3 class="h3 fw-light mb-4">Used Tools</h3>
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">Eclipse(STS)</li>
+                                    <li class="list-group-item">NetBeans
+                                    </li>
+                                    <li class="list-group-item">IntellijIdea</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-sm">
+                                    <li class="list-group-item">Maven</li>
+                                    <li class="list-group-item">MySQL</li>
+                                    <li class="list-group-item"> MySQL Workbanch</li>
+
+                                </ul>
+                                <ul class="list-group list-group-horizontal-md">
+                                    <li class="list-group-item">GitHub
+                                    </li>
+                                    <li class="list-group-item">Notepad++
+                                    </li>
+                                    <li class="list-group-item">Visual Studio Code
+                                    </li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-lg">
+                                    <li class="list-group-item">Swing
+                                    </li>
+                                    <li class="list-group-item">Android Studio</li>
+                                    <li class="list-group-item">Brackets</li>
+                                </ul>
+                                <ul class="list-group list-group-horizontal-lg">
+                                    <li class="list-group-item">Wolfram Mathematica
+                                    </li>
+
+                                </ul>
+                                <p></p>
+                                <h3 class="h3 fw-light mb-4">Others Used Application</h3>
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item">MS Office</li>
+                                    <li class="list-group-item">
+                                        MS Excel
+                                    </li>
+                                    <li class="list-group-item">MS PowerPoint</li>
+                                    <li class="list-group-item">Adobe Xd</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Courses Code  -->
+                <div class="shadow-1-strong bg-white my-5 p-5" id="skills">
+                    <div class="skills-section">
+                        <h2 class="h2 fw-light mb-4">Courses & Professional Trainings</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="h3 fw-light mb-4">Courses</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-primary">Computer Fundamentals (MS Office, Windows)</li>
+                                    <li class="list-group-item list-group-item-secondary">Computer Fundamentals (MS Office, Windows)</li>
+                                    <li class="list-group-item list-group-item-success">Database Development using Oracle 11g</li>
+                                    <li class="list-group-item list-group-item-danger">Object Oriented Programming using JAVA (Core Java)</li>
+                                    <li class="list-group-item list-group-item-warning">Software Development using JAVA and XML</li>
+                                    <li class="list-group-item list-group-item-info">O-O System Analysis and Design using UML</li>
+                                    <li class="list-group-item list-group-item-light">Server-Side Programming using Servlets, JSP,Thymeleaf, JSTL, Hibernate, Angular</li>
+                                    <li class="list-group-item list-group-item-dark">Spring, Spring Boot, Jasper Report</li>
+                                    <li class="list-group-item list-group-item-success">Oracle Certified Java Programmer & Mobile Application using Android
+                                    </li>
+                                    <li class="list-group-item list-group-item-dark">Flutter</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="h3 fw-light mb-4">Professional Trainings</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-primary">Computer Fundamental:- <small>Course Duration: Two months</small></li>
+                                    <li class="list-group-item list-group-item-secondary">Diploma in Enterprise System Analysis and Development (J2EE):-
+                                        <small> Course Duration: Feb, 2021 – July, 2022 (1060 Hours)</small></li>
+                                    <li class="list-group-item list-group-item-success">Graphic Design( Adobe Photoshop, Illustrator) :-
+                                        <small> Duration: Six months Under LEDP</small>
+                                    </li>
+                                    <li class="list-group-item list-group-item-danger">Video Editing(Adobe Premiere pro, Adobe After Effect) :-
+                                        <small> Duration: Six months Under LEDP</small>
+                                    </li>
+                                    <li class="list-group-item list-group-item-warning">Software Development using JAVA and XML</li>
+                                    <li class="list-group-item list-group-item-info">Adobe Xd</li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Courses Code End -->
+                <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
+                    <div class="work-experience-section">
+                        <h2 class="h2 fw-light mb-4">Work Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-card timeline-card-info" data-aos="fade-in" data-aos-delay="0">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Full Stack Developer (Java, Spring Boot, Angular)<span class="text-muted h6"> at The Computers Limited.</span></div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">July 2021 - August 2022</div>
+                                    <div>When I find my flow, and your stride, life seems to work best. My job as a fulstack developer is all about finding the right solutions to problems using code.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-info" data-aos="fade-in" data-aos-delay="0">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Trainer : ICT & Mathematics<span class="text-muted h6"> at Student Aid Organization</span></div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">May, 2017 - Present</div>
+                                    <div>The programs I do with my trainer are amazing for overall strength and have a major focus on building my core. I do a lot of unique exercises that shake up the nervous system, which builds my balance and propreception.
+                                        That's really important for my Trainee.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-info" data-aos="fade-in" data-aos-delay="200">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Graphic Designer <span class="text-muted h6">at Design Studio of Sonali Stationary & Online Shope</span></div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">June, 2019 - May, 2020</div>
+                                    <div>Highly creative and multitalented Graphic Designer with extensive experience in multimedia, marketing, and print design.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-info" data-aos="fade-in" data-aos-delay="400">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Frelancer<span class="text-muted h6"> at <a href="https://www.microworkers.com/">microworkers.com</a></span></div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">Join in 2020</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-1-strong bg-white my-5 p-5" id="education">
+                    <div class="education-section">
+                        <h2 class="h2 fw-light mb-4">Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="0">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Diploma in Computer Science<span class="text-muted h6"> from IsDB BISEW</span> </div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">2021-2022</div>
+                                    <div>I have passed This course Completly and cut a good result.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="0">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Masters in Mathematics<span class="text-muted h6"> from National University</span> </div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">2016 - 2018</div>
+                                    <div>In Masters I got 3.31 out of 4. Result was publised in 12/12/2021.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="200">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">Bachelor in Mathematics<span class="text-muted h6"> from National University</span> </div>
+                                </div>
+                                <div class="timeline-body px-4 pb-4">
+                                    <div class="text-muted text-small mb-3">2012 -2016</div>
+                                    <div>In Masters I got 3.36 out of 4. Result was publised in 03/20/2018.</div>
+                                </div>
+                            </div>
+                            <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="400">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">H.S.C(Higher Secondary Certificate) in Science<span class="text-muted h6"> from Govt. Gurudayal College</span> </div>
+                                    <div class="text-muted text-small mb-3">2012</div>
+                                    <div>In H.S.C I got 4.60 out of 5. Result was publised in 18 July,2012 under Dhaka Board.</div>
+                                </div>
+
+                            </div>
+                            <div class="timeline-card timeline-card-success" data-aos="fade-in" data-aos-delay="400">
+                                <div class="timeline-head px-4 pt-3">
+                                    <div class="h5">S.S.C(Secondary School Certificate) in Science<span class="text-muted h6"> from Jarai Tala High School</span> </div>
+                                    <div class="text-muted text-small mb-3">2010</div>
+                                    <div>In S.S.C I got 5.00 out of 5. Result was publised in May 15,2010 under Dhaka Board.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-1-strong bg-white my-5 p-5 d-print-none" id="portfolio">
+                    <div class="portfolio-section">
+                        <h2 class="h2 fw-light mb-4">Portfolio</h2>
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <a href="https://github.com/Shafique95/Android-Native-Project" target="_blank"><img class="" src="images/project-1.jpg" width="500" height="500" /></a>
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center" data-aos="fade-left" data-aos-delay="100">
+                                <div class="m-4 mt-md-2">
+                                    <p class="text-teal text-small">Android Project</p>
+                                    <h3>Blood Donation Android app</h3>
+                                    <p class="text-muted"><strong>➜ Description: </strong>"In order to simplify the use and user interaction of Blood Bank Management System and to reach the most users possible this application is developed.</p>
+                                    <h4>➜ Tools and Technologies used:</h4>
+                                    <p><strong>Back-End: </strong>Used Java Programming Language and Databases Firebase, SQLite<strong> <br>Front-End:</strong> Used XML ,Android widget, Java Activity </p>
+                                    <h3>Project Link</h3>
+                                    <a href="https://github.com/Shafique95/Android-Native-Project" target="_blank">https://github.com/Shafique95/Android-Native-Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-0 portfolio-reverse">
+                            <div class="col-md-6 d-flex align-items-left" data-aos="fade-right" data-aos-delay="100">
+                                <div class="m-4 mt-md-2 text-end">
+                                    <p class="text-teal text-small" style="color: purple;text-align: left">Java Swing Desktop Application</p>
+                                    <h3 style="color: purple;text-align: left">University Management System</h3>
+                                    <p class="text-muted" style="color: purple;text-align: left"><strong>➜ Description:</strong> <b>"University Management System" </b>a comprehensive solution for managing all complex tasks of an university virtually and easily.</p>
+                                    <h4 style="color: purple;text-align: left">This application is split-up in three interfaces where:</h4>
+                                    <ol style="color: purple;text-align: left">
+                                        <li> University Administration able to manage students, teachers, staffs, subject and assign courses to the subject, producing reports, pay salary to all staffs, generate semester wise fees, residences, vehicles management
+                                            etc.
+                                        </li>
+                                        <li>Teacher can manage attendance, assign tasks/assignments, prepare results, collect students fees, prepare admit card, organize exam etc.</li>
+                                        <li> Student can pay fees, download admit card, view all notifications/assignments, view full result/result report/attendance/attendance report etc.</li>
+
+                                    </ol>
+
+                                    <h4 style="color: purple;text-align: left">➜ Tools and Technologies used:</h4>
+                                    <p style="color: purple;text-align: left"><strong>Back-End: </strong>MySQL-5.<strong>Front-End:</strong> Advance Java Swing and Sketch.</p>
+                                    <h3 style="color: purple;text-align: left">Project Link</h3>
+                                    <a style="color: purple;text-align: left" href="https://github.com/Shafique95/Advance-java-swing-project" target="_blank">https://github.com/Shafique95/Advance-java-swing-project</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://github.com/Shafique95/Advance-java-swing-project" target="_blank"><img class="" src="https://github.com/Shafique95/Shafiqul-Islam/blob/main/images/project-2.PNG" alt="Image is not available" width="550" height="700" /></a>
+                            </div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <a href="https://github.com/Shafique95/Ecommerce-SpringBoot-Project/tree/main" target="_blank"><img class="" src="images/project-3.png" width="500" height="500" /></a>
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center" data-aos="fade-left" data-aos-delay="100">
+                                <div class="m-4 mt-md-2">
+                                    <p class="text-teal text-small">SpringBoot Project</p>
+                                    <h3>E-Commerce Website Using SpringBoot </h3>
+                                    <p class="text-muted"><strong>➜ Description: </strong>"E-Commerce" is an online marketplace where customers can have a glance of all products and buy those according to their needs.</p>
+                                    <h4>➜ Tools and Technologies used:</h4>
+                                    <p><strong>Back-End: </strong>Spring Boot REST API with Spring Data JPA, Spring Security with JSON/JWT token based authentication, MySQL-8.<strong>Front-End:</strong> Thymeleaf, JavaScript, JQuery, HTML5, CSS3, Bootstrap.</p>
+                                    <h3>Project Link</h3>
+                                    <a href="https://github.com/Shafique95/Ecommerce-SpringBoot-Project/tree/main" target="_blank">https://github.com/Shafique95/Ecommerce-SpringBoot-Project/tree/main</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Ecommerce Spring MVC Project -->
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <a href="https://github.com/Shafique95/SpringMVC-Project" target="_blank"><img class="" src="images/homepage.png" width="500" height="500" /></a>
+                            </div>
+                            <div class="col-md-6 d-flex align-items-center" data-aos="fade-left" data-aos-delay="100">
+                                <div class="m-4 mt-md-2">
+                                    <p class="text-teal text-small">SpringMVC Project</p>
+                                    <h3>E-Commerce Website Using SprinMVC </h3>
+                                    <p class="text-muted"><strong>➜ Description: </strong>"E-Commerce" is an online marketplace where customers can have a glance of all products and buy those according to their needs.</p>
+                                    <h4>➜ Tools and Technologies used:</h4>
+                                    <p><strong>Back-End: </strong>Spring MVC REST API with Hibernate, Spring Security with JSON/JWT token based authentication, MySQL-8. <br><strong>Front-End:</strong> JSP, JavaScript, JQuery, HTML5, CSS3, Bootstrap.</p>
+                                    <h3>Project Link</h3>
+                                    <a href="https://github.com/Shafique95/SpringMVC-Project" target="_blank">https://github.com/Shafique95/SpringMVC-Project</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br> <br>
+                        <!-- Ecommerce Html Css Project -->
+                        <div class="row g-0 portfolio-reverse">
+                            <div class="col-md-6 d-flex align-items-left" data-aos="fade-right" data-aos-delay="100">
+                                <div class="m-4 mt-md-2 text-end">
+                                    <p class="text-teal text-small" style="color: purple;text-align: left">E-commerce</p>
+                                    <h3 style="color: purple;text-align: left">E-commerce Using Html CSS Js</h3>
+                                    <p class="text-muted" style="color: purple;text-align: left"><strong>➜ Description: </strong>"E-Commerce" is an online marketplace where customers can have a glance of all products and buy those according to their needs..</p>
+                                    <h4 style="color: purple;text-align: left">This application is split-up in three interfaces where:</h4>
+                                    <h4 style="color: purple;text-align: left">➜ Tools and Technologies used:</h4>
+                                    <p style="color: purple;text-align: left"><strong>Back-End: </strong>JavaScript. <br><strong>Front-End:</strong> Html,CSS,JavaScript</p>
+                                    <h3 style="color: purple;text-align: left">Project Link</h3>
+                                    <a style="color: purple;text-align: left" href="https://shafique95.github.io/html-css-project/" target="_blank">https://shafique95.github.io/html-css-project/</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://shafique95.github.io/html-css-project/" target="_blank"><img class="" src="images/home page.png" width="550" height="700" /></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Gallery -->
+
+                <div class="row">
+                    <h3>Activity Of My Running Course</h3>
+                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img src="activity/activity6.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+                        <img src="activity/activity5.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+                    </div>
+
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="activity/activity1.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+
+                        <img src="activity/activity2.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    </div>
+
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="activity/activity3.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+                        <img src="activity/activity4.jpeg" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+                    </div>
+                </div>
+                <!-- Gallery -->
+
+                <div class="shadow-1-strong bg-white my-5 p-5" id="references">
+                    <div class="reference-section">
+                        <h2 class="h2 fw-light mb-4">References</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex mb-2">
+                                    <div class="avatar"><img src="images/reference-image-1.webp" width="60" height="60" /></div>
+                                    <div class="header-bio m-3 mb-0">
+                                        <h3 class="h6 mb-1" data-aos="fade-left" data-aos-delay="0">Moshaidul Islam</h3>
+                                        <p class="text-muted text-small" data-aos="fade-left" data-aos-delay="100">Consultant Show & Tell consulting Ltd<br>Cell: +8801711071219<br>Email: moshaidul@gmail.com<br>Relation: Consultant</p>
+
+                                    </div>
+                                </div>
+                                <div class="d-flex"><i class="text-secondary fas fa-quote-left"></i>
+                                    <p class="lead mx-2" data-aos="fade-left" data-aos-delay="100">Shafiqul Islam displays exemplary professionalism and is able to take on challenges. He learns quickly and is an asset to any team.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex mb-2">
+                                    <div class="avatar"><img src="images/reference-image-2.jpg" width="60" height="60" /></div>
+                                    <div class="header-bio m-3 mb-0">
+                                        <h3 class="h6 mb-1" data-aos="fade-left" data-aos-delay="0">Maruf Hasan</h3>
+                                        <p class="text-muted text-small" data-aos="fade-left" data-aos-delay="100">Faculty at IsDB-BISEW IT Scholarship Project<br>Cell :+8801571256324<br>Email: maruf.tcl@gmail.com<br>Relation: Academic Instructor</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex"><i class="text-secondary fas fa-quote-left"></i>
+                                    <p class="lead mx-2" data-aos="fade-left" data-aos-delay="100">Shafiqul Islam is a great co-worker and problem solver. He is quick to extend his helping hand and makes a good team player.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-1-strong bg-white my-5 p-5" id="contact">
+                    <div class="contant-section">
+                        <h2 class="h2 fw-light text mb-4">Contact</h2>
+                        <div class="row mb-4">
+                            <div class="col-md-5" data-aos="fade-left" data-aos-delay="200">
+                                <div class="mt-1">
+                                    <div class="h6"><i class="fas fa-phone pe-2 text-muted" style="width:24px;opacity:0.85;"></i>01934776188</div>
+                                    <div class="h6"><i class="far fa-envelope pe-2 text-muted" style="width:24px;opacity:0.85;"></i> www.shafiquebd@gmail.com</div>
+                                </div>
+                                <div class="mt-5 d-print-none">
+                                    <form action="https://formspree.io/f/mknyyqqa" method="POST">
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="name" name="name" class="form-control" required/>
+                                            <label class="form-label" for="name">Name</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="email" name="email" class="form-control" required/>
+                                            <label class="form-label" for="email">Email address</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <textarea class="form-control" name="textarea" style="resize: none;" id="message" rows="4" required></textarea>
+                                            <label class="form-label" for="message">Message</label>
+                                        </div>
+                                        <button class="btn btn-info btn-block mb-4" type="submit">Send</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-7 d-print-none" data-aos="zoom-in" data-aos-delay="100"><iframe width="600" height="400" src="https://www.youtube.com/embed/npKFCMlyVYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="pt-4 pb-4 text-muted text-center d-print-none">
+        <div class="container">
+            <div class="my-3">
+                <div class="h4">Shafiqul Islam</div>
+                <div class="footer-nav">
+                    <nav role="navigation">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item"><a class="nav-link" href="https://twitter.com/shafique0193477" target="_blank" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/shafique01934776188" target="_blank" title="Facebook"><i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/shafique01934776188" target="_blank" title="Instagram"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="https://github.com/shafique95" target="_blank" title="Github"><i class="fab fa-github"></i><span class="menu-title sr-only">Github</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- <div class="text-small">
+                <div class="mb-1">&copy; Material Resume. All rights reserved.</div>
+                <div>Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+            </div> -->
+        </div>
+    </footer>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Add navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/90');
+                nav.classList.remove('glass-effect');
+            } else {
+                nav.classList.remove('bg-white/90');
+                nav.classList.add('glass-effect');
+            }
+        });
+
+        // Typing animation for hero subtitle
+        const subtitle = document.querySelector('.typing-text');
+        if (subtitle) {
+            const text = subtitle.textContent;
+            subtitle.textContent = '';
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    subtitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            };
+            setTimeout(typeWriter, 1000);
+        }
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Form validation can be added here
+                console.log('Form submitted');
+            });
+        }
+
+        // Skill cards hover effect
+        const skillCards = document.querySelectorAll('.skill-card');
+        skillCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>

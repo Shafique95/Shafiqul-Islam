@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Video Diagnostic Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .warning { background: #fff3cd; color: #856404; }
+        
+        video {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Ultimate Video Diagnostic Test</h1>
+    <p><strong>File:</strong> 1264992-Ecommerce-Project.mp4</p>
+    
+    <div class="grid">
+        <!-- Test 1: Basic HTML5 Video -->
+        <div class="test-container">
+            <h3>Test 1: Basic HTML5 Video</h3>
+            <video id="video1" controls>
+                <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
+                Your browser doesn't support HTML5 video.
+            </video>
+            <div>
+                <button onclick="testVideo('video1')">Test Play</button>
+                <button onclick="resetVideo('video1')">Reset</button>
+            </div>
+            <div id="status1" class="status info">Ready for testing</div>
+        </div>
+        
+        <!-- Test 2: Video with all attributes -->
+        <div class="test-container">
+            <h3>Test 2: Fully Attributed Video</h3>
+            <video id="video2" controls preload="auto" muted playsinline>
+                <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
+                <source src="1264992-Ecommerce-Project.mp4" type="video/webm">
+                Your browser doesn't support HTML5 video.
+            </video>
+            <div>
+                <button onclick="testVideo('video2')">Test Play</button>
+                <button onclick="resetVideo('video2')">Reset</button>
+            </div>
+            <div id="status2" class="status info">Ready for testing</div>
+        </div>
+        
+        <!-- Test 3: Programmatic Control -->
+        <div class="test-container">
+            <h3>Test 3: Programmatic Control</h3>
+            <video id="video3" width="400" height="225">
+                <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
+            </video>
+            <div>
+                <button onclick="loadAndPlay('video3')">Load & Play</button>
+                <button onclick="playWithPromise('video3')">Promise Play</button>
+                <button onclick="resetVideo('video3')">Reset</button>
+            </div>
+            <div id="status3" class="status info">Ready for testing</div>
+        </div>
+        
+        <!-- Test 4: File Accessibility -->
+        <div class="test-container">
+            <h3>Test 4: File Accessibility</h3>
+            <div>
+                <button onclick="checkFileAccess()">Check File Access</button>
+                <button onclick="downloadTest()">Download Test</button>
+                <button onclick="fetchTest()">Fetch Test</button>
+            </div>
+            <div id="status4" class="status info">Ready for testing</div>
+            <div id="fileInfo" class="log"></div>
+        </div>
+    </div>
+    
+    <!-- System Information -->
+    <div class="test-container">
+        <h3>🖥️ System Information</h3>
+        <div id="systemInfo" class="log"></div>
+    </div>
+    
+    <!-- Event Log -->
+    <div class="test-container">
+        <h3>📋 Event Log</h3>
+        <button onclick="clearLog()">Clear Log</button>
+        <div id="eventLog" class="log"></div>
+    </div>
+
+    <script>
+        let logEntries = [];
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const entry = `[${timestamp}] ${message}`;
+            logEntries.push(entry);
+            
+            const logElement = document.getElementById('eventLog');
+            if (logElement) {
+                logElement.textContent = logEntries.join('\n');
+                logElement.scrollTop = logElement.scrollHeight;
+            }
+            
+            console.log(entry);
+        }
+        
+        function clearLog() {
+            logEntries = [];
+            document.getElementById('eventLog').textContent = '';
+        }
+        
+        function updateStatus(videoId, message, type = 'info') {
+            const statusElement = document.getElementById(`status${videoId.slice(-1)}`);
+            if (statusElement) {
+                statusElement.textContent = message;
+                statusElement.className = `status ${type}`;
+            }
+            log(`Video ${videoId}: ${message}`);
+        }
+        
+        function setupVideoListeners(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+            
+            video.addEventListener('loadstart', () => updateStatus(videoId, 'Loading started', 'info'));
+            video.addEventListener('loadedmetadata', () => updateStatus(videoId, `Metadata loaded (${video.duration?.toFixed(2)}s)`, 'success'));
+            video.addEventListener('loadeddata', () => updateStatus(videoId, 'Data loaded', 'success'));
+            video.addEventListener('canplay', () => updateStatus(videoId, 'Can play', 'success'));
+            video.addEventListener('canplaythrough', () => updateStatus(videoId, 'Can play through', 'success'));
+            video.addEventListener('play', () => updateStatus(videoId, 'Playing', 'success'));
+            video.addEventListener('pause', () => updateStatus(videoId, 'Paused', 'warning'));
+            video.addEventListener('ended', () => updateStatus(videoId, 'Ended', 'info'));
+            video.addEventListener('error', (e) => {
+                const error = video.error;
+                let errorMsg = 'Unknown error';
+                if (error) {
+                    switch(error.code) {
+                        case 1: errorMsg = 'MEDIA_ERR_ABORTED'; break;
+                        case 2: errorMsg = 'MEDIA_ERR_NETWORK'; break;
+                        case 3: errorMsg = 'MEDIA_ERR_DECODE'; break;
+                        case 4: errorMsg = 'MEDIA_ERR_SRC_NOT_SUPPORTED'; break;
+                    }
+                }
+                updateStatus(videoId, `Error: ${errorMsg}`, 'error');
+            });
+            video.addEventListener('stalled', () => updateStatus(videoId, 'Stalled', 'warning'));
+            video.addEventListener('waiting', () => updateStatus(videoId, 'Waiting/Buffering', 'warning'));
+            video.addEventListener('seeking', () => updateStatus(videoId, 'Seeking', 'info'));
+            video.addEventListener('seeked', () => updateStatus(videoId, 'Seeked', 'info'));
+            video.addEventListener('timeupdate', () => {
+                if (video.currentTime > 0) {
+                    updateStatus(videoId, `Playing: ${video.currentTime.toFixed(1)}s`, 'success');
+                }
+            });
+        }
+        
+        function testVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+            
+            updateStatus(videoId, 'Testing...', 'info');
+            
+            if (video.paused) {
+                video.play().then(() => {
+                    updateStatus(videoId, 'Play successful', 'success');
+                }).catch(err => {
+                    updateStatus(videoId, `Play failed: ${err.message}`, 'error');
+                });
+            } else {
+                video.pause();
+                updateStatus(videoId, 'Paused', 'warning');
+            }
+        }
+        
+        function resetVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+            
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+            updateStatus(videoId, 'Reset complete', 'info');
+        }
+        
+        function loadAndPlay(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+            
+            updateStatus(videoId, 'Loading...', 'info');
+            video.load();
+            
+            video.addEventListener('canplay', function playWhenReady() {
+                video.removeEventListener('canplay', playWhenReady);
+                video.play().then(() => {
+                    updateStatus(videoId, 'Load & play successful', 'success');
+                }).catch(err => {
+                    updateStatus(videoId, `Load & play failed: ${err.message}`, 'error');
+                });
+            });
+        }
+        
+        function playWithPromise(videoId) {
+            const video = document.getElementById(videoId);
+            if (!video) return;
+            
+            updateStatus(videoId, 'Promise play attempt...', 'info');
+            
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        updateStatus(videoId, 'Promise play successful', 'success');
+                    })
+                    .catch(error => {
+                        updateStatus(videoId, `Promise play failed: ${error.message}`, 'error');
+                        
+                        // Try with muted
+                        video.muted = true;
+                        video.play().then(() => {
+                            updateStatus(videoId, 'Muted play successful', 'success');
+                        }).catch(err => {
+                            updateStatus(videoId, `Muted play also failed: ${err.message}`, 'error');
+                        });
+                    });
+            } else {
+                updateStatus(videoId, 'Play promise undefined', 'warning');
+            }
+        }
+        
+        function checkFileAccess() {
+            updateStatus('', 'Checking file access...', 'info');
+            
+            fetch('1264992-Ecommerce-Project.mp4', { method: 'HEAD' })
+                .then(response => {
+                    const fileInfo = document.getElementById('fileInfo');
+                    const info = [
+                        `Status: ${response.status} ${response.statusText}`,
+                        `Content-Type: ${response.headers.get('content-type') || 'Not specified'}`,
+                        `Content-Length: ${response.headers.get('content-length') || 'Unknown'} bytes`,
+                        `Accept-Ranges: ${response.headers.get('accept-ranges') || 'Not specified'}`,
+                        `Last-Modified: ${response.headers.get('last-modified') || 'Unknown'}`,
+                        `Cache-Control: ${response.headers.get('cache-control') || 'Not specified'}`
+                    ].join('\n');
+                    
+                    fileInfo.textContent = info;
+                    updateStatus('', `File accessible: ${response.status}`, response.ok ? 'success' : 'error');
+                })
+                .catch(err => {
+                    updateStatus('', `File access failed: ${err.message}`, 'error');
+                    document.getElementById('fileInfo').textContent = `Error: ${err.message}`;
+                });
+        }
+        
+        function downloadTest() {
+            updateStatus('', 'Testing download...', 'info');
+            const link = document.createElement('a');
+            link.href = '1264992-Ecommerce-Project.mp4';
+            link.download = 'test-download.mp4';
+            link.click();
+            updateStatus('', 'Download initiated', 'success');
+        }
+        
+        function fetchTest() {
+            updateStatus('', 'Fetch testing...', 'info');
+            
+            fetch('1264992-Ecommerce-Project.mp4')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    return response.blob();
+                })
+                .then(blob => {
+                    updateStatus('', `Fetch successful: ${(blob.size / 1024 / 1024).toFixed(2)} MB`, 'success');
+                    
+                    // Try to create object URL and play
+                    const url = URL.createObjectURL(blob);
+                    const testVideo = document.createElement('video');
+                    testVideo.src = url;
+                    testVideo.addEventListener('loadedmetadata', () => {
+                        updateStatus('', `Blob video duration: ${testVideo.duration?.toFixed(2)}s`, 'success');
+                        URL.revokeObjectURL(url);
+                    });
+                })
+                .catch(err => {
+                    updateStatus('', `Fetch failed: ${err.message}`, 'error');
+                });
+        }
+        
+        function displaySystemInfo() {
+            const info = [
+                `User Agent: ${navigator.userAgent}`,
+                `Platform: ${navigator.platform}`,
+                `Language: ${navigator.language}`,
+                `Online: ${navigator.onLine}`,
+                `Cookies Enabled: ${navigator.cookieEnabled}`,
+                `Screen: ${screen.width}x${screen.height}`,
+                `Window: ${window.innerWidth}x${window.innerHeight}`,
+                `Location: ${window.location.href}`,
+                `Protocol: ${window.location.protocol}`,
+                '',
+                'Video Format Support:',
+                `MP4: ${document.createElement('video').canPlayType('video/mp4')}`,
+                `WebM: ${document.createElement('video').canPlayType('video/webm')}`,
+                `OGV: ${document.createElement('video').canPlayType('video/ogg')}`,
+                '',
+                'Codec Support:',
+                `H.264: ${document.createElement('video').canPlayType('video/mp4; codecs="avc1.42E01E"')}`,
+                `H.265: ${document.createElement('video').canPlayType('video/mp4; codecs="hev1.1.6.L93.B0"')}`,
+                `VP8: ${document.createElement('video').canPlayType('video/webm; codecs="vp8"')}`,
+                `VP9: ${document.createElement('video').canPlayType('video/webm; codecs="vp9"')}`
+            ].join('\n');
+            
+            document.getElementById('systemInfo').textContent = info;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Page loaded, initializing tests...');
+            displaySystemInfo();
+            
+            // Setup listeners for all videos
+            ['video1', 'video2', 'video3'].forEach(setupVideoListeners);
+            
+            // Auto-test file access
+            setTimeout(checkFileAccess, 1000);
+        });
+    </script>
+</body>
+</html>

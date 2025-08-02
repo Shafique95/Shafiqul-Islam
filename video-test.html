@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        video { width: 100%; max-width: 800px; border: 2px solid #333; }
+        .test-btn { padding: 10px 20px; margin: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Video Playback Test</h1>
+    
+    <h2>Method 1: Basic HTML5 Video with Controls</h2>
+    <video id="testVideo1" controls>
+        <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h2>Method 2: JavaScript Controlled</h2>
+    <video id="testVideo2" width="800">
+        <source src="1264992-Ecommerce-Project.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button class="test-btn" onclick="playVideo2()">Play Video 2</button>
+    <button class="test-btn" onclick="pauseVideo2()">Pause Video 2</button>
+    
+    <h2>Video Information</h2>
+    <div id="videoInfo"></div>
+    
+    <script>
+        function playVideo2() {
+            const video = document.getElementById('testVideo2');
+            video.play().then(() => {
+                console.log('Video playing successfully');
+                document.getElementById('videoInfo').innerHTML += '<p>✅ Video playing successfully</p>';
+            }).catch(err => {
+                console.error('Error playing video:', err);
+                document.getElementById('videoInfo').innerHTML += '<p>❌ Error: ' + err.message + '</p>';
+            });
+        }
+        
+        function pauseVideo2() {
+            const video = document.getElementById('testVideo2');
+            video.pause();
+            document.getElementById('videoInfo').innerHTML += '<p>⏸️ Video paused</p>';
+        }
+        
+        // Check video on load
+        window.onload = function() {
+            const video1 = document.getElementById('testVideo1');
+            const video2 = document.getElementById('testVideo2');
+            
+            video1.addEventListener('loadedmetadata', function() {
+                document.getElementById('videoInfo').innerHTML += '<p>✅ Video 1 metadata loaded - Duration: ' + video1.duration + 's</p>';
+            });
+            
+            video1.addEventListener('error', function(e) {
+                document.getElementById('videoInfo').innerHTML += '<p>❌ Video 1 error: ' + e.message + '</p>';
+            });
+            
+            video2.addEventListener('loadedmetadata', function() {
+                document.getElementById('videoInfo').innerHTML += '<p>✅ Video 2 metadata loaded - Duration: ' + video2.duration + 's</p>';
+            });
+            
+            video2.addEventListener('error', function(e) {
+                document.getElementById('videoInfo').innerHTML += '<p>❌ Video 2 error: ' + e.message + '</p>';
+            });
+            
+            // Display video info
+            setTimeout(() => {
+                document.getElementById('videoInfo').innerHTML += '<p>Video 1 src: ' + video1.currentSrc + '</p>';
+                document.getElementById('videoInfo').innerHTML += '<p>Video 2 src: ' + video2.currentSrc + '</p>';
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
