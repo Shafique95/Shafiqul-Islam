@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Qultec Authenticator - Secure TOTP two-factor authentication app">
+    <title>Privacy Policy - Qultec Authenticator</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .privacy-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+        .privacy-section {
+            margin-bottom: 40px;
+        }
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-left: 4px solid #00bcd4;
+            padding-left: 15px;
+        }
+        .privacy-section h3 {
+            font-size: 1.3rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+        .privacy-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .privacy-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .highlight-box {
+            background: #e8f8f9;
+            border-left: 4px solid #00bcd4;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="privacy-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p><strong>Qultec Authenticator</strong></p>
+            <p>Last Updated: May 15, 2026</p>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Summary:</strong> Qultec Authenticator is a fully offline app. All your 2FA account data is encrypted and stored only on your device. We do not collect, transmit, or share any personal information.
+        </div>
+
+        <div class="privacy-section">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Qultec Authenticator ("the App"), developed by Qultec. This Privacy Policy explains how we handle your information when you use our two-factor authentication (2FA) mobile application.</p>
+            <p>Qultec Authenticator is designed with a strict privacy-first approach. The App operates entirely offline and does not communicate with any external servers. Your authentication secrets and account data never leave your device.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>2. Information We Collect</h2>
+
+            <h3>2.1 Data Stored Locally on Your Device</h3>
+            <p>Qultec Authenticator stores the following data exclusively on your device using encrypted secure storage:</p>
+            <ul>
+                <li>2FA account names and issuer information (e.g., "Google", "GitHub")</li>
+                <li>Encrypted TOTP secret keys</li>
+                <li>Your app PIN (stored as a PBKDF2 hash — never in plain text)</li>
+                <li>App preferences and settings</li>
+            </ul>
+
+            <h3>2.2 Data We Do NOT Collect</h3>
+            <p>We do not collect, transmit, or store any of the following:</p>
+            <ul>
+                <li>Personal information (name, email, phone number)</li>
+                <li>Device identifiers or advertising IDs</li>
+                <li>Location data</li>
+                <li>Usage analytics or crash reports</li>
+                <li>Any data on external servers or cloud services</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>All data stored by the App is used solely to provide the App's core functionality:</p>
+            <ul>
+                <li>Generating time-based one-time passwords (TOTP) for your registered accounts</li>
+                <li>Verifying your identity via PIN or biometric authentication before showing OTP codes</li>
+                <li>Displaying your account list on the dashboard</li>
+            </ul>
+            <p>No data is shared with third parties, used for advertising, or transmitted over the internet for any purpose.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>4. Data Security</h2>
+            <p>We take the security of your authentication secrets extremely seriously:</p>
+            <ul>
+                <li><strong>AES-256-GCM Encryption:</strong> All TOTP secret keys are encrypted using AES-256 in GCM mode before being saved to device storage.</li>
+                <li><strong>PBKDF2 PIN Hashing:</strong> Your app PIN is hashed with PBKDF2 (10,000 iterations) and a unique random salt — it is never stored in plain text.</li>
+                <li><strong>Flutter Secure Storage:</strong> All sensitive data is stored in Android's Keystore-backed encrypted storage, inaccessible to other apps.</li>
+                <li><strong>Biometric Lock:</strong> Optional biometric (fingerprint/face) authentication adds an additional layer of protection.</li>
+                <li><strong>Screen Security:</strong> The App prevents screenshots and screen recording to protect OTP codes from being captured.</li>
+                <li><strong>No Internet Permission:</strong> The App does not request internet access, making network-based attacks impossible.</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>5. Permissions</h2>
+            <p>The App requests the following device permissions, each used solely for its stated purpose:</p>
+            <ul>
+                <li><strong>Camera:</strong> Used exclusively to scan QR codes when adding new 2FA accounts. No photos or images are saved or transmitted.</li>
+                <li><strong>Biometric / Fingerprint:</strong> Used to unlock the App as an alternative to the PIN. Biometric data is processed entirely by the device's secure hardware and never accessed or stored by the App.</li>
+                <li><strong>Vibration:</strong> Used for haptic feedback when copying OTP codes.</li>
+            </ul>
+            <p>No other permissions are requested or required.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>6. Third-Party Services</h2>
+            <p>Qultec Authenticator does not integrate with any third-party analytics, advertising, crash reporting, or cloud services. The App functions entirely on-device with no external dependencies at runtime.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>7. Children's Privacy</h2>
+            <p>Qultec Authenticator does not knowingly collect any personal information from anyone, including children under 13. Since all data remains locally on the device and we collect nothing, the App presents no privacy risk to users of any age.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>8. Data Retention and Deletion</h2>
+            <p>Your data is stored solely on your device for as long as you use the App. You can permanently delete all App data at any time by:</p>
+            <ul>
+                <li>Uninstalling the App from your device</li>
+                <li>Clearing the App's data via Android Settings → Apps → Qultec Authenticator → Clear Data</li>
+            </ul>
+            <p><strong>Important:</strong> Deleting the App or clearing its data will permanently remove all stored 2FA accounts and cannot be undone. Please ensure you have backup access to your accounts before doing so.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>9. Root / Jailbreak Detection</h2>
+            <p>The App includes root detection to protect your sensitive authentication secrets. On rooted devices, the App may display a security warning or restrict functionality, as rooted environments may compromise the integrity of encrypted storage.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in the App or applicable law. Any updates will be posted on this page with a revised "Last Updated" date. We encourage you to review this policy periodically. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>11. Contact Us</h2>
+            <div class="contact-info">
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
+                <p><strong>Developer:</strong> Qultec</p>
+                <p><strong>Email:</strong> <a href="mailto:support@qultec.com">support@qultec.com</a></p>
+                <p><strong>Website:</strong> <a href="https://shafiqul-islam.vercel.app" target="_blank">shafiqul-islam.vercel.app</a></p>
+            </div>
+        </div>
+
+        <div class="privacy-section">
+            <p style="text-align: center; color: #666; margin-top: 50px;">
+                <small>© 2026 Qultec. All rights reserved.</small>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
